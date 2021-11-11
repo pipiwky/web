@@ -1,0 +1,72 @@
+<!--
+ * @Description: 成绩查询系统--flask增删改查示例
+ * @Author: LJW
+ * @Date: 2021-03-19 00:19:55
+ * @LastEditTime: 2021-03-19 16:02:44
+ * @LastEditors: LJW
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <script src="../static/js/jquery-1.11.1.min.js"></script>
+    <title>成绩查询系统</title>
+</head>
+<body>
+    <form action="">
+        <div id='login'>
+            <p>登录</p>
+            <div id='username'>
+                <input type="text" placeholder="输入用户名" name="username" id="usernameclass">
+            </div>
+            <div id='password'>
+                <input type="text" placeholder="输入密码" name="password" id="passwordclass">
+            </div>
+            <div id='update'>
+                <button>
+                    <input type="submit" value="登录">
+                </button>
+            </div>
+        </div>
+    </form>
+    <img src="../static/jpg/2.jpg" style="width:100%;height:100%">
+    <script type="text/javascript">
+
+        function getData() {
+            var username = $('#usernameclass').val();
+            var password = $('#passwordclass').val();
+
+            // login
+            $.ajax({
+                cache: false,
+                type: "POST",
+                url: "/mainPage", //把表单数据发送到/main
+                //JSON封装发送的数据
+                data: JSON.stringify({
+                    "username": username,
+                    "password": password
+                }),
+                async: false,
+                dataType : "json",  // 服务器返回的数据形式, 如果是render_template就是html / 一般是json
+                success: function(res) {
+                    alert("登录成功!");
+                    alert(res);
+                    window.location.href='test'; // error，无法主动跳转
+                    //下一行加上window.event.returnvalue=false，扑捉到这个时间，随后判为false，停止对操作，便可以解决问题。
+                    window.event.returnValue=false;
+                },
+                error: function(err, type) {
+                    alert("密码输错 或 有BUG导致请求发送失败咯!");
+                    console.log("ajax错误类型：" + type); //查看错误类型
+                    console.log(err);
+                }
+            });
+
+        }
+        $("button").click(function(){
+            getData()
+        });
+    </script>
+</body>
+</html>
