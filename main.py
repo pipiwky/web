@@ -2,14 +2,30 @@ import streamlit as st
 from User import user
 from DataBase import DatabaseUser
 import streamlit.components.v1 as components
-
+from flask import Flask,url_for,redirect,render_template,request
+app = Flask(__name__)
 
 class FamilyAssetManagement(object):
     def __init__(self):
-        #self.test()
-        self.Database = DatabaseUser()
-        self.Database.load_data()
-        self.webpageinit()
+        self.WebIni()
+        # self.test()
+        # self.Database = DatabaseUser()
+        # self.Database.load_data()
+        # self.webpageinit()
+    def WebIni(self):
+
+        @app.route('/login', methods=['POST', 'GET'])
+        def login():
+            if request.method == 'GET':
+                return render_template('kkk.html')
+            else:
+                username = request.form.get('username')
+                password = request.form.get('password')
+                print(username)
+                #return "post request, username: %s password:%s" % (username, password)
+
+        app.run()
+
     def test(self):
         with st.form("my_form"):
             st.write("Inside the form")

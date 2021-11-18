@@ -5,7 +5,7 @@ from User import user
 class DatabaseUser(object):
     def __init__(self):
         self.Userlist = list()
-
+        self.tmp_dict = {}
     def Append_user(self,params):
         A = user(**params)
         self.Userlist.append(A)
