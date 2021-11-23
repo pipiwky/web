@@ -1,18 +1,20 @@
 import streamlit as st
 
+
 class user(object):
-    def __int__(self):
+    def __init__(self):
         self.father = 0
         self.children = 0
-        self.saving = 0
-        self.stock = 0
-        self.mutual_fund = 0
-        self.fex = 0
-        self.loan = 0
-        self.credit_card = 0
+        self.time_deposit = 0
+        self.demand_deposit = 0
+        self.Investment = 0
+        self.Loan = 0
+        self.Insurance = 0
+        self.Assets = 0
+        self.Liabilities = 0
         self.personal_info = " "
+        self.familypool = 0
 
-    def __init__(self,**kwargs):
-        super().__init__()
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+
+
+u = user()

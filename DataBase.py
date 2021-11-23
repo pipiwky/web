@@ -6,8 +6,20 @@ class DatabaseUser(object):
     def __init__(self):
         self.Userlist = list()
         self.tmp_dict = {}
+        self.fmypoollst = list()
     def Append_user(self,params):
-        A = user(**params)
+        A = user()
+        A.father = params['father']
+        A.Assets = params['Assets']
+        A.Loan = params['Loan']
+        A.personal_info = params['personal_info']
+        A.Insurance = params['Insurance']
+        A.Liabilities = params['Liabilities']
+        A.demand_deposit = params['demand_deposit']
+        A.time_deposit = params['time_deposit']
+        A.children = params['children']
+        A.familypool = params['familypool']
+        A.Investment = params['Investment']
         self.Userlist.append(A)
 
 
@@ -26,8 +38,7 @@ class DatabaseUser(object):
 
     def save_data(self):
         A = user()
-        A.loan = 2
-        A.personal_info = "XiuMing"
+        A.personal_info = 'Children'
         print(A.__dict__)
         d = pd.DataFrame([A.__dict__])
         d.to_csv("Userdata",index=0)
@@ -38,7 +49,7 @@ class DatabaseUser(object):
         params = []
         for i in val:
             d = {}
-            d.update(dict(zip(['father', 'children', 'saving', 'stock', 'mutual_fund', 'fex', 'loan', 'credit_card',
+            d.update(dict(zip(['father', 'children', 'time_deposit', 'demand_deposit', 'Investment', 'Loan', 'Insurance', 'Assets','Liabilities','familypool',
                                'personal_info'], i)))
             params.append(d)
         for i in range(len(params)):
@@ -51,8 +62,24 @@ class DatabaseUser(object):
         current = self.Userlist[order]
         tmp = current.__dict__
         tmp[title] = info[1]
-        current = user(**tmp)
+        current.father = tmp['father']
+        current.Assets = tmp['Assets']
+        current.Loan = tmp['Loan']
+        current.personal_info = tmp['personal_info']
+        current.Insurance = tmp['Insurance']
+        current.Liabilities = tmp['Liabilities']
+        current.demand_deposit = tmp['demand_deposit']
+        current.time_deposit = tmp['time_deposit']
+        current.children = tmp['children']
+        current.familypool = tmp['familypool']
+        current.Investment = tmp['Investment']
         self.Userlist[order] = current
     def retrieve(self,order):
         return self.Userlist[order]
+
+
+
+
+
+
 

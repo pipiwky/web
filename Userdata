@@ -1,2 +1,2 @@
-father,children,saving,stock,mutual_fund,fex,loan,credit_card,personal_info
-0,0,10,20,30,40,2,20,XiuMing
+father,children,time_deposit,demand_deposit,Investment,Loan,Insurance,Assets,Liabilities,personal_info,familypool
+0,0,20,30,10,20,30,20,10,Children,0

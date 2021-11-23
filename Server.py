@@ -7,7 +7,10 @@ def select():
 
     print(Database.tmp_dict)
     return render_template("test-home.html",tmp_dict=Database.tmp_dict)
-
+@app.route('/family_pool_overview',methods=['GET','POST'])
+def family_pool_overview():
+    print(Database.tmp_dict)
+    return render_template('family-pool-overview.html',tmp_dict=Database.tmp_dict)
 @app.route('/',methods=['POST','GET'])
 def login():
     if request.method == 'GET':
@@ -20,11 +23,28 @@ def login():
         tmp_dict = current_user.__dict__
         Database.tmp_dict = tmp_dict
 
-        return redirect(url_for('select'))
+        return redirect(url_for('family_pool_overview'))
 
 @app.route('/info',methods=['GET','POST'])
 def info():
     return tmp_dict
+
+@app.route('/family_pool_manage')
+def family_pool_manage():
+    return render_template('family-pool-manage.html',tmp_dict=Database.tmp_dict)
+
+@app.route('/family_pool_manage_in')
+def family_pool_manage_in():
+    return render_template('family-pool-manage-in.html',tmp_dict = Database.tmp_dict)
+
+@app.route('/family_pool_manage_sw')
+def family_pool_manage_sw():
+    return render_template('family-pool-manage-sw.html',tmp_dict = Database.tmp_dict)
+
+@app.route('/family_pool_goal')
+def family_pool_goal():
+    return render_template('family-pool-goals.html',tmp_dict = Database.tmp_dict)
+
 if __name__ == '__main__':
     Database = DatabaseUser()
     Database.load_data()
