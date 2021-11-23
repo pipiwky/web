@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="mystyle.css">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='mystyle.css') }}">
         <title>Home</title>
     </head>
     <body style="height:100%" onload="changetable(1)">
@@ -22,7 +22,7 @@
     <div class="sidearea">
       <nav class="sidenav">
         <ul>
-          <li onclick="window.location.href='family-pool-overview.html'">Overview</li>
+          <li onclick="window.location.href='{{ url_for( 'family_pool_overview') }}';">Overview</li>
           <li class="menu-1st">Manage Account
             <ul class="menu-2nd">
               <li id="selected2">
@@ -31,7 +31,7 @@
               <li>
                 Invest
                 <ul class="menu-3rd-hidden">
-                  <li onclick="window.location.href='family-pool-manage-in.html'">stock</li>
+                  <li onclick="window.location.href='{{ url_for( 'family_pool_manage_in') }}';">stock</li>
                   <li>fund</li>
                   <li>insurance</li>
                 </ul>
@@ -42,7 +42,7 @@
             </ul>
           </li>
           
-          <li onclick="window.location.href='family-pool-goals.html'">Set Goals</li>
+          <li onclick="window.location.href='{{ url_for( 'family_pool_goal') }}';">Set Goals</li>
         </ul>
         <hr>
         <p>Welcome, Bob</p>

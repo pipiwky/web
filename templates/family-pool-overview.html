@@ -4,9 +4,405 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="mystyle.css">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='mystyle.css') }}">
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>
-        <script type="text/javascript" src="createchart.js"></script>
+        <script>
+            function createALchart(){
+  var dom = document.getElementById("chart1");
+  var bin = echarts.getInstanceByDom(dom)
+  if (typeof bin !== 'undefined'){
+    bin.clear()
+  }
+  var myChart = echarts.init(dom);
+  var option;
+
+
+
+  setTimeout(function () {
+  const datasetA = {
+    dimensions: ['product', 'value'],
+    source: [
+      ['Time Deposit', {{tmp_dict['time_deposit']}}],
+      ['Demand Deposit', {{tmp_dict['demand_deposit']}}],
+      ['Investment', {{tmp_dict['Investment']}}]
+    ]
+  };
+  const datasetL = {
+    dimensions: ['product', 'value'],
+    source: [
+      ['Loan', {{tmp_dict['Loan']}}],
+      ['Insurance', {{tmp_dict['Insurance']}}]
+    ]
+  };
+  const datasetO = {
+    dimensions: ['product', 'value'],
+    source: [
+      ['Assets', {{tmp_dict['Assets']}}],
+      ['Liabilities', {{tmp_dict['Liabilities']}}]
+    ]
+  };
+  const OptionA = {
+    dataset: [datasetA],
+    series: [
+      {
+        type: 'pie',
+        // associate the series to be animated by id
+        id: 'product',
+        emphasis: {
+          scale: true,
+          scaleSize: 20,
+          focus: 'self'
+        },
+        radius: [0, '50%'],
+        universalTransition: true,
+        animationDurationUpdate: 1000,
+        label: {
+          formatter: ' {c} ({d}%)'
+        }
+      },
+    ],
+    graphic: [
+    {
+      type: 'text',
+      left: 250,
+      top: 30,
+      style: {
+        text: 'Back',
+        fontSize: 20,
+        fill: "#212121",
+      },
+      onclick: function() {
+        myChart.setOption(OptionO, true);
+      }
+    }
+  ]
+
+  };
+  const OptionL = {
+    dataset: [datasetL],
+    series: [
+      {
+        type: 'pie',
+        // associate the series to be animated by id
+        id: 'product',
+        emphasis: {
+          scale: true,
+          scaleSize: 20,
+          focus: 'self'
+        },
+        radius: [0, '50%'],
+        universalTransition: true,
+        animationDurationUpdate: 1000,
+        label: {
+          formatter: ' {c} ({d}%)'
+        }
+      }
+    ],
+    graphic: [
+    {
+      type: 'text',
+      left: 250,
+      top: 30,
+      style: {
+        text: 'Back',
+        fontSize: 20,
+        fill: "#212121",
+      },
+      onclick: function() {
+        myChart.setOption(OptionO, true);
+      }
+    }
+  ]
+  };
+  const OptionO = {
+    dataset: [datasetO],
+    series: [
+      {
+        type: 'pie',
+        // associate the series to be animated by id
+        id: 'product',
+        emphasis: {
+          scale: true,
+          scaleSize: 20,
+          focus: 'self'
+        },
+        radius: [0, '50%'],
+        universalTransition: true,
+        animationDurationUpdate: 1000,
+        label: {
+          formatter: '{c} ({d}%)'
+        }
+      }
+    ]
+  };
+  option = OptionO;
+/*
+  this.myChart.on('click', function(params) {
+    if(params.seriesType == 'pie') {
+      myChart.setOption({
+        series: {
+          id: 'pie',
+          radius:'40%',
+        }
+      })
+    }
+  });
+*/
+
+  myChart.on('click', function(params) {
+    if(params.name == 'Assets') {
+      option=OptionA;
+      myChart.setOption(option, true);
+    }
+    else
+    if(params.name == 'Liabilities') {
+      option=OptionL;
+      myChart.setOption(option, true);
+    }
+    else
+    if(params.name == 'Investment') {
+      document.getElementById("mask").style.height="400px";
+      document.getElementById("mask").style.border="2px solid rgba(255,255,255,0.1);";
+      var mask = document.querySelector(".float-menu");
+      var insertbtn = `
+        <button class="floatbtn">
+          Buy/Sell Securities
+        </button>
+        <button class="floatbtn">
+          About
+        </button>
+        <button class="floatbtn" onclick="hidemenu()">
+          Return
+        </button>
+      `
+      mask.innerHTML = (insertbtn);
+    }
+    else
+    if(params.name == 'Time Deposit') {
+      document.getElementById("mask").style.height="400px";
+      document.getElementById("mask").style.border="2px solid rgba(255,255,255,0.1);";
+      var mask = document.querySelector(".float-menu");
+      var insertbtn = `
+        <button class="floatbtn">
+          Save/Withdraw Money
+        </button>
+        <button class="floatbtn">
+          About
+        </button>
+        <button class="floatbtn" onclick="hidemenu()">
+          Return
+        </button>
+      `
+      mask.innerHTML = (insertbtn);
+    }
+    else
+    if(params.name == 'Demand Deposit') {
+      document.getElementById("mask").style.height="400px";
+      document.getElementById("mask").style.border="2px solid rgba(255,255,255,0.1);";
+      var mask = document.querySelector(".float-menu");
+      var insertbtn = `
+        <button class="floatbtn">
+          Save/Withdraw Money
+        </button>
+        <button class="floatbtn">
+          About
+        </button>
+        <button class="floatbtn" onclick="hidemenu()">
+          Return
+        </button>
+      `
+      mask.innerHTML = (insertbtn);
+    }
+
+  });
+  myChart.on('mouseout', function(params) {
+    if(params.seriesType == 'pie') {
+      myChart.setOption({
+        series: {
+          id: 'pie',
+          radius:'30%'
+        }
+      })
+    }
+  });
+  myChart.setOption(option);
+  });
+
+  if (option && typeof option === 'object') {
+    myChart.setOption(option);
+  }
+}
+function createOIchart(){
+  var dom = document.getElementById("chart2");
+  bin = echarts.getInstanceByDom(dom);
+  if (typeof bin !== 'undefined'){
+    bin.clear()
+  }
+  var myChart = echarts.init(dom);
+  var option;
+
+
+
+  setTimeout(function () {
+  const datasetA = {
+    dimensions: ['product', 'value'],
+    source: [
+      ['A', 10],
+      ['B', 30],
+      ['C', 10]
+    ]
+  };
+  const datasetL = {
+    dimensions: ['product', 'value'],
+    source: [
+      ['A', 13],
+      ['B', 21]
+    ]
+  };
+  const datasetO = {
+    dimensions: ['product', 'value'],
+    source: [
+      ['Income', 88],
+      ['Outgoing', 12]
+    ]
+  };
+  const OptionA = {
+    dataset: [datasetA],
+    series: [
+      {
+        type: 'pie',
+        // associate the series to be animated by id
+        id: 'product',
+        emphasis: {
+          scale: true,
+          scaleSize: 20,
+          focus: 'self'
+        },
+        radius: [0, '50%'],
+        universalTransition: true,
+        animationDurationUpdate: 1000,
+        label: {
+          formatter: ' {c} ({d}%)'
+        }
+      },
+    ],
+    graphic: [
+    {
+      type: 'text',
+      left: 250,
+      top: 30,
+      style: {
+        text: 'Back',
+        fontSize: 20,
+        fill: "#212121",
+      },
+      onclick: function() {
+        myChart.setOption(OptionO, true);
+      }
+    }
+  ]
+
+  };
+  const OptionL = {
+    dataset: [datasetL],
+    series: [
+      {
+        type: 'pie',
+        // associate the series to be animated by id
+        id: 'product',
+        emphasis: {
+          scale: true,
+          scaleSize: 20,
+          focus: 'self'
+        },
+        radius: [0, '50%'],
+        universalTransition: true,
+        animationDurationUpdate: 1000,
+        label: {
+          formatter: ' {c} ({d}%)'
+        }
+      }
+    ],
+    graphic: [
+    {
+      type: 'text',
+      left: 250,
+      top: 30,
+      style: {
+        text: 'Back',
+        fontSize: 20,
+        fill: "#212121",
+      },
+      onclick: function() {
+        myChart.setOption(OptionO, true);
+      }
+    }
+  ]
+  };
+  const OptionO = {
+    dataset: [datasetO],
+    series: [
+      {
+        type: 'pie',
+        // associate the series to be animated by id
+        id: 'product',
+        emphasis: {
+          scale: true,
+          scaleSize: 20,
+          focus: 'self'
+        },
+        radius: [0, '50%'],
+        universalTransition: true,
+        animationDurationUpdate: 1000,
+        label: {
+          formatter: '{c} ({d}%)'
+        }
+      }
+    ]
+  };
+  option = OptionO;
+/*
+  this.myChart.on('click', function(params) {
+    if(params.seriesType == 'pie') {
+      myChart.setOption({
+        series: {
+          id: 'pie',
+          radius:'40%',
+        }
+      })
+    }
+  });
+*/
+
+  myChart.on('click', function(params) {
+    if(params.name == 'Income') {
+      option=OptionA;
+      myChart.setOption(option, true);
+    }
+    else
+    if(params.name == 'Outgoing') {
+      option=OptionL;
+      myChart.setOption(option, true);
+    }
+  });
+  myChart.on('mouseout', function(params) {
+    if(params.seriesType == 'pie') {
+      myChart.setOption({
+        series: {
+          id: 'pie',
+          radius:'30%'
+        }
+      })
+    }
+  });
+  myChart.setOption(option);
+  });
+
+  if (option && typeof option === 'object') {
+    myChart.setOption(option);
+  }
+}
+        </script>
         <title>Home</title>
     </head>
     <body style="height:100%">
@@ -25,25 +421,25 @@
       <nav class="sidenav">
         <ul>
           <li id="selected2">Overview</li>
-          <li class="menu-1st" onclick="window.location.href='family-pool-manage.html'">Manage Account
+          <li class="menu-1st" onclick="window.location.href='{{ url_for( 'family_pool_manage') }}';">>Manage Account
           <ul class="menu-2nd-hidden">
-            <li onclick="window.location.href='family-pool-manage-sw.html'">
+            <li onclick="window.location.href='{{ url_for( 'family_pool_manage_sw') }}';">
               Save/Withdraw
             </li>
             <li>
               Invest
                 <ul>
-                  <li onclick="window.location.href='family-pool-manage-in.html'">stock</li>
+                  <li onclick="window.location.href='{{ url_for( 'family_pool_manage_in') }}';">stock</li>
                   <li>fund</li>
                   <li>insurance</li>
                 </ul>
             </li>
-            <li onclick="window.location.href='family-pool-manage-mp.html'">
+            <li onclick="window.location.href='family-pool-manage.html'">
               Manage Pools
             </li>
           </ul>
           </li>
-          <li onclick="window.location.href='family-pool-goals.html'">Set Goals</li>
+          <li onclick="window.location.href='{{ url_for( 'family_pool_goal') }}';">Set Goals</li>
         </ul>
         <hr>
         <p>Welcome, Bob</p>
@@ -59,24 +455,24 @@
         <span class="slider"></span>
         <div class="card-overview">
           <h3>Overview</h3><hr>
-          <ul>Liability: 30
+          <ul>Liability: {{tmp_dict['Liability']}}
             <li>
-              Loan: 10
+              Loan: {{tmp_dict['Loan']}}
             </li>
             <li>
-              Insurance: 20
+              Insurance: {{tmp_dict['Insurance']}}
             </li>
           </ul>
           <hr>
-          <ul>Asset: 60
+          <ul>Asset: {{tmp_dict['Assets']}}
             <li>
-              Investment: 10
+              Investment: {{tmp_dict['Investment']}}
             </li>
             <li>
-              Time Deposit: 30
+              Time Deposit: {{tmp_dict['time_deposit']}}
             </li>
             <li>
-              Demand Deposit: 20
+              Demand Deposit: {{tmp_dict['demand_deposit']}}
             </li>
           </ul>
           <ul><hr>
