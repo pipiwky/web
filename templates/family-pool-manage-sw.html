@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html style="height:100%">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
+        <title>Home</title>
+    </head>
+    <body style="height:100%" onload="changetable(1)">
+    <div class="toparea">
+      <p>☰</p>
+      <nav class="topnav">
+        <ul>
+          <li><a href="parent-pool-overview">Parent Pool</a></li>
+          <li id="selected"><a href="#">Family Pool</a></li>
+          <li><a href="#">Children Pool</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="sidearea">
+      <nav class="sidenav">
+        <ul>
+          <li onclick="window.location.href='family-pool-overview.html'">Overview</li>
+          <li class="menu-1st">Manage Account
+            <ul class="menu-2nd">
+              <li id="selected2">
+                Save/Withdraw
+              </li>
+              <li>
+                Invest
+                <ul class="menu-3rd-hidden">
+                  <li onclick="window.location.href='family-pool-manage-in.html'">stock</li>
+                  <li>fund</li>
+                  <li>insurance</li>
+                </ul>
+              </li>
+              <li onclick="window.location.href='family-pool-manage-mp.html'">
+                Manage Pools
+              </li>
+            </ul>
+          </li>
+          
+          <li onclick="window.location.href='family-pool-goals.html'">Set Goals</li>
+        </ul>
+        <hr>
+        <p>Welcome, Bob</p>
+        <img src="parent.png" alt="parent">
+      </nav>
+    </div>
+    <div class="container">
+      <div class="viewer">
+        <div class="imgshower-sw">
+          <img src="cash-flow.png" alt="cash">
+        </div>
+        <div class="table-sw">
+          <nav>
+            <ul>
+              <li id="tb1" onclick="changetable(1)">
+                Save
+              </li>
+              <li id="tb2" onclick="changetable(2)">
+                Withdraw
+              </li>
+            </ul>
+          </nav>
+          <div class="inputarea-sw" id="area">
+            <p>Please enter the amount (Unit: $)</p>
+            <input type="text">
+            <button>submit</button>
+          </div>
+        </div>
+        <div class="overview-sw">
+          <p>Current Balance in Parent Pool:</p>
+          <p>$  291.32</p>
+          <p>Current Balance in Family Pool:</p>
+          <p>$  100</p>
+          <p>Current Balance in Child Pool:</p>
+          <p>$  56</p>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      var btn = document.getElementById("selected")
+      btn.style.backgroundColor = "lightslategray";
+      btn.style.color = "azure";
+      btn.style.boxShadow ="rgba(44, 39, 39, 0.653) 1px 10px 50px 10px";
+      btn.style.zIndex = "1";
+      document.getElementById("selected2").style.color = "silver";
+      function changetable(selecter){
+        tb1 = document.getElementById("tb1");
+        tb2 = document.getElementById("tb2");
+        if(selecter == 1){
+          tb1.style = `
+          background: linear-gradient(160deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) right;
+          background-size: 50.003% 100%;
+          background-repeat: no-repeat;
+          z-index: 3;
+          box-shadow:  30px 10px 20px -12px rgba(0, 0, 0, 0.283);
+          `
+          tb2.style = `
+          background: linear-gradient(160deg, transparent 10px, rgba(220, 216, 216, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(214, 211, 211, 0.87) 0) right;
+          background-size: 50.007% 100%;
+          background-repeat: no-repeat;
+          box-shadow: none;
+          `
+        }
+        else
+          {
+            tb1.style = `
+            background: linear-gradient(160deg, transparent 10px, rgba(220, 216, 216, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(214, 211, 211, 0.87) 0) right;
+            background-size: 50.007% 100%;
+            background-repeat: no-repeat;
+            box-shadow: none;
+            `
+            tb2.style = `
+            background: linear-gradient(160deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) right;
+            background-size: 50.003% 100%;
+            background-repeat: no-repeat;
+            z-index: 3;
+            box-shadow:  -30px 10px 20px -12px rgba(0, 0, 0, 0.283);
+            `
+          }
+      }
+    </script>
+    </body>
+</html>
+    

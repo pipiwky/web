@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html style="height:100%">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
+        <title>Home</title>
+    </head>
+    <body style="height:100%">
+    <div class="toparea">
+      <p>☰</p>
+      <nav class="topnav">
+        <ul>
+          <li><a href="parent-pool-overview">Parent Pool</a></li>
+          <li id="selected"><a href="#">Family Pool</a></li>
+          <li><a href="#">Children Pool</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="sidearea">
+      <nav class="sidenav">
+        <ul>
+          <li onclick="window.location.href='family-pool-overview.html'">Overview</li>
+          <li class="menu-1st" id="selected2">Manage Account
+            <ul class="menu-2nd">
+              <li onclick="window.location.href='family-pool-manage-sw.html'">
+                Save/Withdraw
+              </li>
+              <li>
+                Invest
+                <ul class="menu-3rd-hidden">
+                  <li onclick="window.location.href='family-pool-manage-in.html'">stock</li>
+                  <li>fund</li>
+                  <li>insurance</li>
+                </ul>
+              </li>
+              <li onclick="window.location.href='family-pool-manage-mp.html'">
+                Manage Pools
+              </li>
+            </ul>
+          </li>
+          
+          <li onclick="window.location.href='family-pool-goals.html'">Set Goals</li>
+        </ul>
+        <hr>
+        <p>Welcome, Bob</p>
+        <img src="parent.png" alt="parent">
+      </nav>
+    </div>
+    <div class="container">
+      <div class="viewer">
+        <p class="title">You may want to...</p><hr>
+        <div class="card1">
+          <div class="cardimg">
+            <img src="cash-flow.png" alt="cash-flow">
+          </div>
+          <div class="cardtext">
+            <p>Save/Withdraw</p>
+          </div>
+        </div>
+        <div class="card2" onclick="window.location.href='family-pool-manage-in.html'">
+          <div class="cardimg">
+            <img src="invest.png" alt="invest">
+          </div>
+          <div class="cardtext">
+            <p>Invest</p>
+          </div>
+        </div>
+        <div class="card3" onclick="window.location.href='family-pool-manage-mp.html'">
+          <div class="cardimg">
+            <img src="poolingtransfer.png" alt="transfer">
+          </div>
+          <div class="cardtext">
+            <p>Manage Pools</p>
+          </div>
+      </div>
+    </div>
+    
+    <script>
+      var btn = document.getElementById("selected")
+      btn.style.backgroundColor = "lightslategray";
+      btn.style.color = "azure";
+      btn.style.boxShadow ="rgba(44, 39, 39, 0.653) 1px 10px 50px 10px";
+      btn.style.zIndex = "1";
+      function readfile(filePath,callback) {
+        const afile=new XMLHttpRequest();
+        afile.open("GET", "test.html", true);
+        afile.onload =function(){
+          const text = afile.response;
+          callback(text)
+        }
+        afile.send();
+      }
+
+      document.getElementById("selected2").style.color = "silver";
+      document.querySelector(".card1").addEventListener("click", function(){
+        const filePath = "./test.html";
+        var file;
+        readfile(filePath, (textDetail)=> {
+          file = textDetail;
+        })
+        var viewer = document.querySelector(".viewer");
+        viewer.style.height = "0";
+        viewer.style.opacity = "0";
+        viewer.innerHTML = '';
+        setTimeout(function(){
+          viewer.innerHTML = file;
+          changetable(1);
+          viewer.style.opacity = "1";
+          viewer.style.height = "90%";
+        }, 1000)
+      })
+      function changetable(selecter){
+        tb1 = document.getElementById("tb1");
+        tb2 = document.getElementById("tb2");
+        if(selecter == 1){
+          tb1.style = `
+          background: linear-gradient(160deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) right;
+          background-size: 50.003% 100%;
+          background-repeat: no-repeat;
+          z-index: 3;
+          box-shadow:  30px 10px 20px -12px rgba(0, 0, 0, 0.283);
+          `
+          tb2.style = `
+          background: linear-gradient(160deg, transparent 10px, rgba(220, 216, 216, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(214, 211, 211, 0.87) 0) right;
+          background-size: 50.007% 100%;
+          background-repeat: no-repeat;
+          box-shadow: none;
+          `
+        }
+        else
+          {
+            tb1.style = `
+            background: linear-gradient(160deg, transparent 10px, rgba(220, 216, 216, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(214, 211, 211, 0.87) 0) right;
+            background-size: 50.007% 100%;
+            background-repeat: no-repeat;
+            box-shadow: none;
+            `
+            tb2.style = `
+            background: linear-gradient(160deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) right;
+            background-size: 50.003% 100%;
+            background-repeat: no-repeat;
+            z-index: 3;
+            box-shadow:  -30px 10px 20px -12px rgba(0, 0, 0, 0.283);
+            `
+          }
+      }
+ 
+    </script>
+    </body>
+</html>
+    

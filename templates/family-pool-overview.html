@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html style="height:100%">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
+        <script type="text/javascript" src=".\echarts-5.2.1\dist\echarts.min.js"></script>
+        <script type="text/javascript" src="createchart.js"></script>
+        <title>Home</title>
+    </head>
+    <body style="height:100%">
+    <div class="toparea">
+      <p>☰</p>
+      <nav class="topnav">
+        <ul>
+          <li><a href="parent-pool-overview.html">Parent Pool</a></li>
+          <li id="selected"><a href="#">Family Pool</a></li>
+          <li><a href="#">Children Pool</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="sidearea">
+      <nav class="sidenav">
+        <ul>
+          <li id="selected2">Overview</li>
+          <li class="menu-1st" onclick="window.location.href='family-pool-manage.html'">Manage Account
+          <ul class="menu-2nd-hidden">
+            <li onclick="window.location.href='family-pool-manage-sw.html'">
+              Save/Withdraw
+            </li>
+            <li>
+              Invest
+                <ul>
+                  <li onclick="window.location.href='family-pool-manage-in.html'">stock</li>
+                  <li>fund</li>
+                  <li>insurance</li>
+                </ul>
+            </li>
+            <li onclick="window.location.href='family-pool-manage-mp.html'">
+              Manage Pools
+            </li>
+          </ul>
+          </li>
+          <li onclick="window.location.href='family-pool-goals.html'">Set Goals</li>
+        </ul>
+        <hr>
+        <p>Welcome, Bob</p>
+        <img src="parent.png" alt="parent">
+      </nav>
+    </div>
+    <div class="container">
+      <div class="viewer">
+        <div class="chart-container">
+          <div id="chart1"></div>
+          <div id="chart2"></div>
+        </div>
+        <span class="slider"></span>
+        <div class="card-overview">
+          <h3>Overview</h3><hr>
+          <ul>Liability: 30
+            <li>
+              Loan: 10
+            </li>
+            <li>
+              Insurance: 20
+            </li>
+          </ul>
+          <hr>
+          <ul>Asset: 60
+            <li>
+              Investment: 10
+            </li>
+            <li>
+              Time Deposit: 30
+            </li>
+            <li>
+              Demand Deposit: 20
+            </li>
+          </ul>
+          <ul><hr>
+            <li>
+              Income Today: 88
+            </li>
+            <li>
+              Outgoing Today: 12
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      var btn = document.getElementById("selected")
+      btn.style.backgroundColor = "lightslategray";
+      btn.style.color = "azure";
+      btn.style.boxShadow ="rgba(44, 39, 39, 0.653) 1px 10px 50px 10px";
+      btn.style.zIndex = "1";
+      document.getElementById("selected2").style.color = "silver";
+      createALchart();
+      createOIchart();
+    </script>
+    </body>
+</html>
+    

@@ -1,5 +1,5 @@
 function createALchart(){
-  var dom = document.getElementById("container"); 
+  var dom = document.getElementById("chart1"); 
   var bin = echarts.getInstanceByDom(dom)
   if (typeof bin !== 'undefined'){
     bin.clear()
@@ -55,11 +55,12 @@ function createALchart(){
     graphic: [
     {
       type: 'text',
-      left: 50,
-      top: 20,
+      left: 250,
+      top: 30,
       style: {
         text: 'Back',
-        fontSize: 40
+        fontSize: 20,
+        fill: "#212121",
       },
       onclick: function() {
         myChart.setOption(OptionO, true);
@@ -91,11 +92,12 @@ function createALchart(){
     graphic: [
     {
       type: 'text',
-      left: 50,
-      top: 20,
+      left: 250,
+      top: 30,
       style: {
         text: 'Back',
-        fontSize: 40
+        fontSize: 20,
+        fill: "#212121",
       },
       onclick: function() {
         myChart.setOption(OptionO, true);
@@ -150,8 +152,59 @@ function createALchart(){
     }
     else
     if(params.name == 'Investment') {
-      alert("1");
+      document.getElementById("mask").style.height="400px";
+      document.getElementById("mask").style.border="2px solid rgba(255,255,255,0.1);";
+      var mask = document.querySelector(".float-menu");
+      var insertbtn = `
+        <button class="floatbtn">
+          Buy/Sell Securities
+        </button>
+        <button class="floatbtn">
+          About
+        </button>
+        <button class="floatbtn" onclick="hidemenu()">
+          Return
+        </button>
+      `
+      mask.innerHTML = (insertbtn);
     }
+    else
+    if(params.name == 'Time Deposit') {
+      document.getElementById("mask").style.height="400px";
+      document.getElementById("mask").style.border="2px solid rgba(255,255,255,0.1);";
+      var mask = document.querySelector(".float-menu");
+      var insertbtn = `
+        <button class="floatbtn">
+          Save/Withdraw Money
+        </button>
+        <button class="floatbtn">
+          About
+        </button>
+        <button class="floatbtn" onclick="hidemenu()">
+          Return
+        </button>
+      `
+      mask.innerHTML = (insertbtn);
+    }
+    else
+    if(params.name == 'Demand Deposit') {
+      document.getElementById("mask").style.height="400px";
+      document.getElementById("mask").style.border="2px solid rgba(255,255,255,0.1);";
+      var mask = document.querySelector(".float-menu");
+      var insertbtn = `
+        <button class="floatbtn">
+          Save/Withdraw Money
+        </button>
+        <button class="floatbtn">
+          About
+        </button>
+        <button class="floatbtn" onclick="hidemenu()">
+          Return
+        </button>
+      `
+      mask.innerHTML = (insertbtn);
+    }
+    
   });
   myChart.on('mouseout', function(params) {
     if(params.seriesType == 'pie') {
@@ -171,7 +224,7 @@ function createALchart(){
   }
 }
 function createOIchart(){
-  var dom = document.getElementById("container"); 
+  var dom = document.getElementById("chart2"); 
   bin = echarts.getInstanceByDom(dom);
   if (typeof bin !== 'undefined'){
     bin.clear()
@@ -227,11 +280,12 @@ function createOIchart(){
     graphic: [
     {
       type: 'text',
-      left: 50,
-      top: 20,
+      left: 250,
+      top: 30,
       style: {
         text: 'Back',
-        fontSize: 40
+        fontSize: 20,
+        fill: "#212121",
       },
       onclick: function() {
         myChart.setOption(OptionO, true);
@@ -263,11 +317,12 @@ function createOIchart(){
     graphic: [
     {
       type: 'text',
-      left: 50,
-      top: 20,
+      left: 250,
+      top: 30,
       style: {
         text: 'Back',
-        fontSize: 40
+        fontSize: 20,
+        fill: "#212121",
       },
       onclick: function() {
         myChart.setOption(OptionO, true);

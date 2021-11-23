@@ -1,0 +1,755 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+    width: 100%;
+    height: 100%;
+}
+.toparea {
+    float: left;
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 10%;
+    background-color: #f1f1f1;
+}
+.toparea p {
+    position: fixed;
+    width: 15%;
+    height: 10%;
+    font-size: 40px;
+    text-align: center;
+    line-height: 60px;
+    color: aliceblue;
+    background-color: #212121;
+    cursor: default;
+}
+.topnav {
+    width: 100%;
+    height: 100%;
+}
+.topnav ul {
+    list-style-type: none;
+    height: 100%;
+    margin-left: 15%;
+    overflow: hidden;
+    display: flex;
+}
+.topnav li {
+    list-style: none;
+    height: 100%;
+    width: 33.33%;
+    text-align: center;
+    color:black;
+    transition: 0.2s all linear;
+}
+
+.topnav li:hover {
+    background-color:slategray;
+    color: azure;
+}
+
+.topnav li a {
+    line-height: 3;
+    font-size: larger;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.sidearea {
+    width: 15%;
+    float: left;
+    height: 90%;
+    position: relative;
+    background-color: #212121;
+}
+.sidenav {
+    height: 80%;
+    display: flexbox;
+}
+.sidenav ul {
+    height: 100%;
+}
+.sidenav li {
+    position: relative;
+    padding: 20px;
+    line-height: 1;
+    transition: 0.2s all linear;
+    cursor: pointer;
+    font-size: x-large;
+    line-height: 2.5;
+    color: #999;
+    display: block;
+}
+.sidenav li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 0;
+    height: 100%;
+    border-bottom: 2px solid #f1f1f1;
+    transition: 0.2s all linear;
+}
+.sidenav li:hover::before {
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-bottom-color: rgb(235, 207, 207);
+}
+
+.sidenav li:hover ~ .sidenav li::before {
+    left: 0;
+}
+.sidenav li:active {
+    background: #000;
+    color: #fff;
+}
+.sidenav li ul li {
+    left: 5%;
+    font-size: large;
+}
+.sidenav li ul li ul li{
+    text-transform: uppercase;
+    font-size: medium;
+    left: 10%;
+}
+.menu-2nd-hidden li {
+    padding: 0;
+    line-height: 0;
+    overflow: hidden;
+    font-size: medium;
+    transition: 0.6s ease;
+}
+.menu-1st:hover .menu-2nd-hidden li{
+    line-height: 20px;
+    padding: 10px 20px 10px 10px;
+    overflow: visible;
+    transition: all 0.6s ease;
+}
+
+.sidearea hr {
+    border: 0;
+    color: #d0d0d5;
+    background: linear-gradient(currentColor, currentColor) no-repeat center;
+    background-size: 100% 1px;
+}
+.sidearea hr::before {
+    content: '';
+    display: block;
+    width: .75em; height: .75em;
+    border-radius: 50%;
+    background-color: currentColor;
+    margin: auto;
+}
+.sidearea p {
+    margin-top: 4%;
+    text-align: center;
+    color: #d0d0d5;
+}
+.sidearea img {
+    position: absolute;
+    width: 25%;
+    left: 37%;
+    top: 88%;
+}
+.container {
+    position: relative;
+    left: 15%;
+    top: 10%;
+    width: 85%;
+    height: 90%;
+    background-image: url(background4.jpg);
+    background-size: cover;
+}
+.viewer {
+    position: relative;
+    width: 95%;
+    height: 90%;
+    top: 5%;
+    left: 3%;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 1%;
+    transition: 0.7s all;
+}
+.viewer1-in {
+    position: relative;
+    width: 33.93%;
+    height: 88.46%;
+    top: 5%;
+    left: 3%;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 1%;
+    transition: 0.7s all;
+}
+.viewer2-in {
+    position: absolute;
+    width: 54.67%;
+    height: 54.907%;
+    top: 5%;
+    left: 40%;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 1%;
+    transition: 0.7s all;
+}
+.viewer3-in {
+    position: absolute;
+    width: 54.67%;
+    height: 30%;
+    top: 65%;
+    left: 40%;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 1%;
+    transition: 0.7s all;
+}
+.title {
+    position: absolute;
+    left: 4%;
+    top: 4%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: bold;
+    font-size: xx-large;
+}
+.title1-in {
+    position: absolute;
+    left: 4%;
+    top: 2.3%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: bold;
+    font-size: xx-large;
+}
+.viewer > hr {
+    position: absolute;
+    left: 4%;
+    top: 10%;
+    width: 90%;
+}
+.viewer1-in > hr {
+    position: absolute;
+    left: 4%;
+    top: 8%;
+    width: 90%;
+}
+.viewer2-in > hr {
+    position: absolute;
+    left: 4%;
+    top: 13%;
+    width: 90%;
+}
+/* sw page */
+.card1 {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    width: 26%;
+    height: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    clear: both;
+    display: inline-block;
+    transition: 0.5s all;
+    cursor: pointer;
+    background-color: rgba(240, 202, 243, 0.551);
+    border-radius: 10%;
+}/*rgba(246, 255, 82, 0.551)*/
+.card1:hover {
+    transform: rotate(3.3deg) scale(1.05);
+    transition: 0.5s all;
+}
+.card2 {
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    width: 26%;
+    height: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    clear: both;
+    display: inline-block;
+    transition: 0.5s all;
+    cursor: pointer;
+    border-radius: 10%;
+    background-color: rgba(250, 250, 250, 0.496);
+}/*rgba(134, 255, 82, 0.551)*/
+.card2:hover {
+    transform: rotate(3.3deg) scale(1.05);
+    transition: 0.5s all;
+}
+.card3 {
+    position: absolute;
+    top: 30%;
+    left: 65%;
+    width: 26%;
+    height: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    clear: both;
+    display: inline-block;
+    transition: 0.5s all;
+    cursor: pointer;
+    border-radius: 10%;
+    background-color: rgba(148, 205, 230, 0.551);
+}
+.card3:hover {
+    transform: rotate(3.3deg) scale(1.05);
+    transition: 0.5s all;
+}
+.cardimg {
+    width: 100%;
+    height: 80%;
+}
+.cardimg img{
+    position: inherit;
+    margin-top: 30px;
+    width: 60%;
+    max-width: 70%;
+}
+.cardtext {
+    position: relative;
+    font-size: x-large;
+}
+.menu-2nd li {
+    overflow: hidden;
+    font-size: medium;
+    line-height: 20px;
+    padding: 10px 20px 10px 10px;
+    overflow: visible;
+    transition:0.7s ease-out;
+}
+.imgshower-sw {
+    position: relative;
+    width: 40%;
+    height: 60%;
+    left: 0;
+}
+.imgshower-sw img {
+    position: inherit;
+    left: -20%;
+    top: 0%;
+    width: 50%;
+}
+.table-sw {
+    position:absolute;
+    left:5%;
+    top: 60%;
+    width: 90%;
+    height: 35%;
+    /*background: linear-gradient(160deg, transparent 100px, rgba(255, 255, 255, 0.87) 0) left, linear-gradient(200deg, transparent 100px, rgba(255, 255, 255, 0.87) 0) right;
+    background-size: 50.007% 100%;
+    background-repeat: no-repeat;*/
+}
+.table-sw nav {
+    position: inherit;
+    left: 20%;
+    width: 60%;
+    height: 30%;
+}
+.table-sw ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.table-sw li{
+    line-height: 2.5;
+    font-size: larger;
+    color: rgba(0, 0, 0, 0.455);
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    list-style: none;
+    background: linear-gradient(160deg, transparent 10px, rgba(220, 216, 216, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(214, 211, 211, 0.87) 0) right;
+    background-size: 50.007% 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+.table-sw li:hover {
+    background: linear-gradient(160deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) right;
+    background-size: 50.003% 100%;
+    background-repeat: no-repeat;
+    transition: 0.5s all;
+}
+.table-sw .inputarea-sw {
+    position: inherit;
+    width: 100%;
+    height: 81%;
+    top: 30%;
+    background-image: linear-gradient(to bottom, rgba(231, 231, 231, 0.551), rgba(0, 0, 0, 0));
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+    box-shadow: rgba(0, 0, 0, 0.31) 0px -17px 65px 3px;
+    z-index: 3;
+}
+.inputarea-sw p {
+    text-align: center;
+    line-height: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: slategrey;
+    letter-spacing: 1.5px;
+}
+.inputarea-sw input {
+    position: inherit;
+    left: 30%;
+    top: 30%;
+    height: 20%;
+    width: 40%;
+    text-align: center;
+    border-collapse: separate;
+    perspective: 1px;
+    overflow: hidden;
+    border-radius: 10%;
+}
+.inputarea-sw button {
+    position: inherit;
+    left: 40%;
+    top: 70%;
+    width: 20%;
+    height: 20%;
+    color: rgb(255, 249, 249);
+    font-size: larger;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 0.5rem;
+    background-color: rgba(91, 91, 91, 0.211);
+    border: 0px;
+    cursor: pointer;
+}
+.overview-sw {
+    position: absolute;
+    left: 40%;
+    top: 15%;
+    line-height: 30px;
+}
+.viewer1-in .table1-in-container {
+    position: absolute;
+    top: 11%;
+    left: 4%;
+    width: 90%;
+    height: 70%;
+    border: rgba(182, 182, 181, 0.489) 5px;
+    border-top: 0;
+    border-bottom: 0;
+    border-style: solid;
+}
+.viewer1-in table {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    border-spacing: 0;
+}
+.viewer1-in .table1-in-header {
+    background-color: #696464bb;
+}
+.viewer1-in th{
+    padding: 20px 15px;
+    font-weight: 500;
+    font-size: large;
+    color: rgb(255, 255, 255);
+}
+.viewer1-in .table1-in-content {
+    background-color: rgba(208, 206, 206, 0.156);
+    color: rgb(73, 72, 72);
+    line-height: 3;
+    box-shadow: rgb(137, 135, 135) 1px -6px 26px 0px; 
+    transition: 0.3s all;
+}
+.table1-in-content:hover {
+    background-color: #ffffff8d;
+    transform: scale(1.008);
+    box-shadow: rgb(137, 135, 135) 1px -6px 50px 5px;
+    transition: 0.25s all;
+}
+.viewer1-in .viewer1-in-overview {
+    position: absolute;
+    left: 5%;
+    top: 85%;
+    width: 90%;
+    text-align: center;
+    font-size: larger;
+    color: rgb(111, 110, 110);
+}
+/* viewer2-in*/
+.viewer2-in .table2-in-container {
+    position: absolute;
+    top: 18%;
+    left: 4%;
+    width: 90%;
+    height: 75%;
+    border: rgba(182, 182, 181, 0.489) 5px;
+    border-top: 0;
+    border-bottom: 0;
+    border-style: solid;
+}
+.viewer2-in table {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    border-spacing: 0;
+}
+.viewer2-in .table2-in-header {
+    background-color: #696464bb;
+}
+.viewer2-in th{
+    padding: 20px 10px;
+    font-weight: 500;
+    font-size: large;
+    color: rgb(255, 255, 255);
+}
+.viewer2-in .table2-in-content {
+    background-color: rgba(208, 206, 206, 0.156);
+    color: rgb(73, 72, 72);
+    line-height: 3;
+    box-shadow: rgb(137, 135, 135) 1px -6px 26px 0px;
+    transition: 0.3s all; 
+}
+.table2-in-content td {
+    white-space: nowrap;
+}
+.table2-in-content:hover {
+    background-color: #ffffff8d;
+    transform: scale(1.008);
+    box-shadow: rgb(137, 135, 135) 1px -6px 50px 5px;
+    transition: 0.25s all;
+}
+.viewer2-in .viewer2-in-overview {
+    position: absolute;
+    left: 5%;
+    top: 85%;
+    width: 90%;
+    text-align: center;
+    font-size: larger;
+    color: rgb(111, 110, 110);
+}
+
+
+
+/* viewer3-in*/
+.inputarea-in {
+    position: absolute;
+    width: 40%;
+    height: 80%;
+    left: 0%;
+    top: 15%;
+}
+.inputarea-in dl {
+    text-align: center;
+}
+.inputarea-in dt {
+    margin: 10px 0px 10px 0;
+}
+.inputarea-in dd input{
+    text-align: center;
+    border-collapse: separate;
+    perspective: 1px;
+    overflow: hidden;
+    border-radius: 12%;
+}
+
+.inputarea-in .formsubmit-in{
+    position: absolute;
+    left: 85%;
+    top: 32%;
+    width: 30%;
+    height: 20%;
+    background-color: rgb(255, 255, 255);
+    border-color: rgba(174, 172, 172, 0.347);
+    border-width: 2px;
+    border-radius: 13%;
+    border-collapse: separate;
+    color: rgb(189, 189, 189);
+    font-size: large;
+    font: bold;
+    cursor: pointer;
+}
+.viewer3-in span {
+    position: absolute;
+    border: 1px;
+    width: 5px;
+    height: 50%;
+    margin: 0;
+    padding: 0;
+    top: 20%;
+    left: 50%;
+    background-color: rgba(171, 171, 171, 0.299);
+    border-radius: 10px;
+}
+.viewer3-in .previewer-in {
+    position: inherit;
+    left: 55%;
+    top: 15%;
+}
+.previewer-in p {
+    line-height: 30px;
+    font-size: large;
+}
+/* Overview Page */
+
+
+.chart-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 1%;
+}
+.chart-container div {
+    width: 60%;
+    height: 50%;
+}
+.slider {
+    position: fixed;
+    border: 1px;
+    width: 5px;
+    height: 50%;
+    margin: 0;
+    padding: 0;
+    top: 30%;
+    left: 60%;
+    background-color: rgba(171, 171, 171, 0.299);
+    border-radius: 10px;
+}
+.card-overview {
+    padding: 10px;
+    position: absolute;
+    left:57%;
+    top: 10%;
+    width: 35%;
+    height: 80%;
+    background-color: rgba(240, 240, 240, 0.884);
+    border: 1px;
+    border-color: #ffffff90;
+    border-radius: 4rem;
+    border-style: solid;
+    -webkit-transition: all 250ms cubic-bezier(0.02, 0.01, 0.47, 1);
+    transition: all 250ms cubic-bezier(.02, .01, .47, 1);
+    box-shadow: rgba(132, 132, 132, 0.4) 5px 5px, rgba(148, 148, 148, 0.3) 10px 10px, rgba(121, 118, 120, 0.2) 15px 15px, rgba(189, 183, 187, 0.1) 20px 20px, rgba(208, 200, 205, 0.05) 25px 25px;
+  }
+
+  .card-overview:hover {
+    box-shadow: 0 16px 32px 5px rgba(48, 55, 66, 0.15), rgba(110, 107, 109, 0.4) 5px 5px 20px;
+    transform: translate(0,-5px);
+    transition-delay: 0s !important;
+  }
+
+  .box-shadow {
+    -webkit-box-shadow: 0 0.25rem 1rem rgba(48, 55, 66, 0.15);
+    box-shadow: 0 4px 16px rgba(48, 55, 66, 0.15);
+  }
+
+
+.card-overview h3{
+    line-height: 45px;
+    text-align: center;
+}
+.card-overview ul {
+    list-style: none;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+.card-overview hr {
+    border-style: solid;
+    border-color: #938e8e45;
+}
+.card-overview li {
+    
+    text-align: center;
+}
+
+/*stock color*/
+.upstock {
+    color: rgb(48, 138, 48);
+}
+.downstock {
+    color: rgb(164, 32, 32);
+}
+
+/*goals page*/
+.goalcards {
+    position: absolute;
+    left: 10%;
+    margin-top: 10%;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    perspective: 1000px;
+}
+.goal {
+    width: 20%;
+    height: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    transition: 1s all;
+    cursor: pointer;
+    background-color: rgba(229, 246, 248, 0.585);
+    border-radius: 10%;
+    transform-style: preserve-3d;
+}
+.title-goal {
+    text-transform: uppercase;
+    font-size: large;
+    font-weight: 550;
+    font-style: oblique;
+    padding-top: 20px;
+}
+.progcontainer {
+    position: absolute;
+    left: 8%;
+    top: 20%;
+    background: rgba(60, 62, 62, 0.449);
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    padding: 0 3px;
+    display: flex;
+    height: 10%;
+    width: 80%;
+}
+.prog {
+    border-radius: 100px;
+    background: rgb(255, 254, 243);
+    height: 83%;
+    width: 66%;
+    color: rgb(123, 118, 118);
+    font-size: medium;
+    font-weight: lighter;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1.4;
+}
+.viewer-g {
+    position: absolute;
+    width: 95%;
+    height: 90%;
+    justify-content: center;
+    align-items: center;
+    top: 5%;
+    left: 3%;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 1%;
+    transition: 0.7s all;
+}
+.viewer-g >hr {
+    position: absolute;
+    left: 4%;
+    top: 10%;
+    width: 90%;
+}
