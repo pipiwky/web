@@ -75,11 +75,11 @@ body {
 }
 .sidenav li {
     position: relative;
-    padding: 20px;
+    padding: 10px;
     line-height: 1;
     transition: 0.2s all linear;
     cursor: pointer;
-    font-size: x-large;
+    font-size: larger;
     line-height: 2.5;
     color: #999;
     display: block;
@@ -133,14 +133,15 @@ body {
 
 .sidearea hr {
     border: 0;
-    color: #d0d0d5;
+    color: #d5d5d5;
     background: linear-gradient(currentColor, currentColor) no-repeat center;
-    background-size: 100% 1px;
+    background-size: 100% 1.2px;
 }
 .sidearea hr::before {
     content: '';
     display: block;
-    width: .75em; height: .75em;
+    width: 13px;
+    height: 13px;
     border-radius: 50%;
     background-color: currentColor;
     margin: auto;
@@ -148,12 +149,12 @@ body {
 .sidearea p {
     margin-top: 4%;
     text-align: center;
-    color: #d0d0d5;
+    color: #d5d5d5ea;
 }
 .sidearea img {
     position: absolute;
     width: 25%;
-    left: 37%;
+    left: 37.5%;
     top: 88%;
 }
 .container {
@@ -171,12 +172,12 @@ body {
     height: 90%;
     top: 5%;
     left: 3%;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.673);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     border-radius: 1%;
     transition: 0.7s all;
 }
-.viewer1-in {
+.viewer1-st {
     position: relative;
     width: 33.93%;
     height: 88.46%;
@@ -187,7 +188,7 @@ body {
     border-radius: 1%;
     transition: 0.7s all;
 }
-.viewer2-in {
+.viewer2-st {
     position: absolute;
     width: 54.67%;
     height: 54.907%;
@@ -198,7 +199,7 @@ body {
     border-radius: 1%;
     transition: 0.7s all;
 }
-.viewer3-in {
+.viewer3-st {
     position: absolute;
     width: 54.67%;
     height: 30%;
@@ -217,7 +218,7 @@ body {
     font-style: bold;
     font-size: xx-large;
 }
-.title1-in {
+.title1-st {
     position: absolute;
     left: 4%;
     top: 2.3%;
@@ -231,24 +232,23 @@ body {
     top: 10%;
     width: 90%;
 }
-.viewer1-in > hr {
+.viewer1-st > hr {
     position: absolute;
     left: 4%;
     top: 8%;
     width: 90%;
 }
-.viewer2-in > hr {
+.viewer2-st > hr {
     position: absolute;
     left: 4%;
     top: 13%;
     width: 90%;
 }
 /* sw page */
-.card1 {
+.entrycard {
     position: absolute;
     top: 30%;
-    left: 5%;
-    width: 26%;
+    width: 19%;
     height: 50%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
@@ -256,48 +256,9 @@ body {
     display: inline-block;
     transition: 0.5s all;
     cursor: pointer;
-    background-color: rgba(240, 202, 243, 0.551);
     border-radius: 10%;
 }/*rgba(246, 255, 82, 0.551)*/
-.card1:hover {
-    transform: rotate(3.3deg) scale(1.05);
-    transition: 0.5s all;
-}
-.card2 {
-    position: absolute;
-    top: 30%;
-    left: 35%;
-    width: 26%;
-    height: 50%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    text-align: center;
-    clear: both;
-    display: inline-block;
-    transition: 0.5s all;
-    cursor: pointer;
-    border-radius: 10%;
-    background-color: rgba(250, 250, 250, 0.496);
-}/*rgba(134, 255, 82, 0.551)*/
-.card2:hover {
-    transform: rotate(3.3deg) scale(1.05);
-    transition: 0.5s all;
-}
-.card3 {
-    position: absolute;
-    top: 30%;
-    left: 65%;
-    width: 26%;
-    height: 50%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    text-align: center;
-    clear: both;
-    display: inline-block;
-    transition: 0.5s all;
-    cursor: pointer;
-    border-radius: 10%;
-    background-color: rgba(148, 205, 230, 0.551);
-}
-.card3:hover {
+.entrycard:hover {
     transform: rotate(3.3deg) scale(1.05);
     transition: 0.5s all;
 }
@@ -351,12 +312,12 @@ body {
     width: 60%;
     height: 30%;
 }
-.table-sw ul {
+.tablenav-sw {
     width: 100%;
     height: 100%;
     display: flex;
 }
-.table-sw li{
+.tablenav-sw li{
     line-height: 2.5;
     font-size: larger;
     color: rgba(0, 0, 0, 0.455);
@@ -370,13 +331,13 @@ body {
     cursor: pointer;
     transition: 0.5s all;
 }
-.table-sw li:hover {
+.tablenav-sw li:hover {
     background: linear-gradient(160deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) right;
     background-size: 50.003% 100%;
     background-repeat: no-repeat;
     transition: 0.5s all;
 }
-.table-sw .inputarea-sw {
+.table-sw .inputer-sw {
     position: inherit;
     width: 100%;
     height: 81%;
@@ -389,9 +350,16 @@ body {
     box-shadow: rgba(0, 0, 0, 0.31) 0px -17px 65px 3px;
     z-index: 3;
 }
+.inputarea-sw {
+    width: 100%;
+    height: 100%;
+    position: inherit;
+    transition: 0.3s all ease-in-out;
+    overflow:hidden;
+}
 .inputarea-sw p {
     text-align: center;
-    line-height: 40px;
+    line-height: 60px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: slategrey;
     letter-spacing: 1.5px;
@@ -399,7 +367,7 @@ body {
 .inputarea-sw input {
     position: inherit;
     left: 30%;
-    top: 30%;
+    top: 38%;
     height: 20%;
     width: 40%;
     text-align: center;
@@ -409,26 +377,121 @@ body {
     border-radius: 10%;
 }
 .inputarea-sw button {
+    text-transform: uppercase;
     position: inherit;
     left: 40%;
-    top: 70%;
+    top: 72%;
     width: 20%;
     height: 20%;
     color: rgb(255, 249, 249);
     font-size: larger;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border-radius: 0.5rem;
+    border-radius: 0.2rem;
     background-color: rgba(91, 91, 91, 0.211);
     border: 0px;
     cursor: pointer;
 }
+.transferarea-sw {
+    width: 100%;
+    height: 100%;
+    position: inherit;
+    transition: 0.3s all ease-in-out;
+    overflow:hidden;
+}
+.transferarea-sw .transtable1 {
+    position: absolute;
+    top: 11%;
+    left: 4%;
+    width: 20%;
+    height: 80%;
+    border: rgba(182, 182, 181, 0.489) 5px;
+    border-top: 0;
+    border-bottom: 0;
+    border-style: solid;
+}
+.transtable1 ul {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    list-style: none;
+}
+.transtable1 li {
+    border:2px rgba(140, 140, 140, 0.864);
+    border-style: solid;
+    border-radius: 3%;
+    margin-bottom: 0.5%;
+    margin-top: 2%;
+    padding: 0px;
+    height: 25%;
+    color: #ffffff8e;
+    display: block;
+    line-height: 2;
+    cursor: pointer;
+    background-color: rgba(152, 152, 152, 0.646);
+    transition: all 0.14s;
+}
+.transtable1 li:hover {
+    transform: scale(1.12);
+    transition: all 0.14s;
+    color: rgb(52, 52, 52);
+    background-color: #f1f1f1;
+}
+.transferarea-sw .transtable2 {
+    position: absolute;
+    top: 11%;
+    left: 75%;
+    width: 20%;
+    height: 80%;
+    border: rgba(182, 182, 181, 0.489) 5px;
+    border-top: 0;
+    border-bottom: 0;
+    border-style: solid;
+}
+.transtable2 ul {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    list-style: none;
+}
+.transtable2 li {
+    border:2px rgba(140, 140, 140, 0.864);
+    border-style: solid;
+    border-radius: 3%;
+    margin-bottom: 0.5%;
+    margin-top: 2%;
+    padding: 0px;
+    height: 25%;
+    color: #ffffff8e;
+    display: block;
+    line-height: 2;
+    cursor: pointer;
+    background-color: rgba(152, 152, 152, 0.646);
+    transition: all 0.14s;
+}
+.transtable2 li:hover {
+    transform: scale(1.12);
+    transition: all 0.14s;
+    color: rgb(52, 52, 52);
+    background-color: #f1f1f1;
+}
+.transferarea-sw .arrow {
+    position: inherit;
+    top: 43%;
+    width: 15px;
+    height: 15px;
+    border-top: 2px solid rgb(121, 121, 121);
+    border-right: 2px solid #000;
+    transform: rotate(45deg);
+    border-radius: 0.11rem;
+}
+
 .overview-sw {
     position: absolute;
     left: 40%;
     top: 15%;
     line-height: 30px;
 }
-.viewer1-in .table1-in-container {
+.viewer1-st .table1-st-container {
     position: absolute;
     top: 11%;
     left: 4%;
@@ -439,7 +502,7 @@ body {
     border-bottom: 0;
     border-style: solid;
 }
-.viewer1-in table {
+.viewer1-st table {
     position: absolute;
     top: 0;
     left: 0;
@@ -450,29 +513,29 @@ body {
     text-align: center;
     border-spacing: 0;
 }
-.viewer1-in .table1-in-header {
+.viewer1-st .table1-st-header {
     background-color: #696464bb;
 }
-.viewer1-in th{
+.viewer1-st th{
     padding: 20px 15px;
     font-weight: 500;
     font-size: large;
     color: rgb(255, 255, 255);
 }
-.viewer1-in .table1-in-content {
+.viewer1-st .table1-st-content {
     background-color: rgba(208, 206, 206, 0.156);
     color: rgb(73, 72, 72);
     line-height: 3;
     box-shadow: rgb(137, 135, 135) 1px -6px 26px 0px; 
     transition: 0.3s all;
 }
-.table1-in-content:hover {
+.table1-st-content:hover {
     background-color: #ffffff8d;
     transform: scale(1.008);
     box-shadow: rgb(137, 135, 135) 1px -6px 50px 5px;
     transition: 0.25s all;
 }
-.viewer1-in .viewer1-in-overview {
+.viewer1-st .viewer1-st-overview {
     position: absolute;
     left: 5%;
     top: 85%;
@@ -481,8 +544,8 @@ body {
     font-size: larger;
     color: rgb(111, 110, 110);
 }
-/* viewer2-in*/
-.viewer2-in .table2-in-container {
+/* viewer2-st*/
+.viewer2-st .table2-st-container {
     position: absolute;
     top: 18%;
     left: 4%;
@@ -493,7 +556,7 @@ body {
     border-bottom: 0;
     border-style: solid;
 }
-.viewer2-in table {
+.viewer2-st table {
     position: absolute;
     top: 0;
     left: 0;
@@ -504,32 +567,33 @@ body {
     text-align: center;
     border-spacing: 0;
 }
-.viewer2-in .table2-in-header {
+.viewer2-st .table2-st-header {
     background-color: #696464bb;
 }
-.viewer2-in th{
+.viewer2-st th{
     padding: 20px 10px;
     font-weight: 500;
-    font-size: large;
+    font-size: medium;
     color: rgb(255, 255, 255);
 }
-.viewer2-in .table2-in-content {
+.viewer2-st .table2-st-content {
     background-color: rgba(208, 206, 206, 0.156);
     color: rgb(73, 72, 72);
     line-height: 3;
     box-shadow: rgb(137, 135, 135) 1px -6px 26px 0px;
     transition: 0.3s all; 
 }
-.table2-in-content td {
+.table2-st-content td {
     white-space: nowrap;
+    font-size: small;
 }
-.table2-in-content:hover {
+.table2-st-content:hover {
     background-color: #ffffff8d;
     transform: scale(1.008);
     box-shadow: rgb(137, 135, 135) 1px -6px 50px 5px;
     transition: 0.25s all;
 }
-.viewer2-in .viewer2-in-overview {
+.viewer2-st .viewer2-st-overview {
     position: absolute;
     left: 5%;
     top: 85%;
@@ -538,24 +602,21 @@ body {
     font-size: larger;
     color: rgb(111, 110, 110);
 }
-
-
-
-/* viewer3-in*/
-.inputarea-in {
+/* viewer3-st*/
+.inputarea-st {
     position: absolute;
     width: 40%;
     height: 80%;
     left: 0%;
     top: 15%;
 }
-.inputarea-in dl {
+.inputarea-st dl {
     text-align: center;
 }
-.inputarea-in dt {
+.inputarea-st dt {
     margin: 10px 0px 10px 0;
 }
-.inputarea-in dd input{
+.inputarea-st dd input{
     text-align: center;
     border-collapse: separate;
     perspective: 1px;
@@ -563,7 +624,7 @@ body {
     border-radius: 12%;
 }
 
-.inputarea-in .formsubmit-in{
+.inputarea-st .formsubmit-st{
     position: absolute;
     left: 85%;
     top: 32%;
@@ -574,12 +635,13 @@ body {
     border-width: 2px;
     border-radius: 13%;
     border-collapse: separate;
-    color: rgb(189, 189, 189);
-    font-size: large;
+    color: rgb(181, 182, 182);
+    font-size: medium;
     font: bold;
     cursor: pointer;
+    text-transform: uppercase;
 }
-.viewer3-in span {
+.viewer3-st span {
     position: absolute;
     border: 1px;
     width: 5px;
@@ -591,12 +653,12 @@ body {
     background-color: rgba(171, 171, 171, 0.299);
     border-radius: 10px;
 }
-.viewer3-in .previewer-in {
+.viewer3-st .previewer-st {
     position: inherit;
     left: 55%;
     top: 15%;
 }
-.previewer-in p {
+.previewer-st p {
     line-height: 30px;
     font-size: large;
 }
@@ -607,7 +669,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    left: 0;
+    left: -5%;
     top: 1%;
 }
 .chart-container div {
@@ -622,10 +684,11 @@ body {
     margin: 0;
     padding: 0;
     top: 30%;
-    left: 60%;
+    left: 57%;
     background-color: rgba(171, 171, 171, 0.299);
     border-radius: 10px;
 }
+/*inspired by https://freefrontend.com/*/
 .card-overview {
     padding: 10px;
     position: absolute;
@@ -641,18 +704,17 @@ body {
     -webkit-transition: all 250ms cubic-bezier(0.02, 0.01, 0.47, 1);
     transition: all 250ms cubic-bezier(.02, .01, .47, 1);
     box-shadow: rgba(132, 132, 132, 0.4) 5px 5px, rgba(148, 148, 148, 0.3) 10px 10px, rgba(121, 118, 120, 0.2) 15px 15px, rgba(189, 183, 187, 0.1) 20px 20px, rgba(208, 200, 205, 0.05) 25px 25px;
-  }
-
-  .card-overview:hover {
+}
+.card-overview:hover {
     box-shadow: 0 16px 32px 5px rgba(48, 55, 66, 0.15), rgba(110, 107, 109, 0.4) 5px 5px 20px;
     transform: translate(0,-5px);
     transition-delay: 0s !important;
-  }
+}
 
-  .box-shadow {
+.box-shadow {
     -webkit-box-shadow: 0 0.25rem 1rem rgba(48, 55, 66, 0.15);
     box-shadow: 0 4px 16px rgba(48, 55, 66, 0.15);
-  }
+}
 
 
 .card-overview h3{
@@ -685,7 +747,7 @@ body {
 .goalcards {
     position: absolute;
     left: 10%;
-    margin-top: 10%;
+    margin-top: 13%;
     width: 80%;
     height: 80%;
     display: flex;
@@ -702,6 +764,7 @@ body {
     background-color: rgba(229, 246, 248, 0.585);
     border-radius: 10%;
     transform-style: preserve-3d;
+    
 }
 .title-goal {
     text-transform: uppercase;
@@ -711,9 +774,8 @@ body {
     padding-top: 20px;
 }
 .progcontainer {
-    position: absolute;
-    left: 8%;
-    top: 20%;
+    margin-left: 7%;
+    margin-top: 5%;
     background: rgba(60, 62, 62, 0.449);
     justify-content: flex-start;
     border-radius: 100px;
@@ -727,12 +789,31 @@ body {
     border-radius: 100px;
     background: rgb(255, 254, 243);
     height: 83%;
-    width: 66%;
     color: rgb(123, 118, 118);
     font-size: medium;
     font-weight: lighter;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     line-height: 1.4;
+}
+.goalcontent {
+    margin-top: 10%;
+}
+.goal hr {
+    width: 80%;
+    margin: 2% 2% 2% 10%;
+}
+.newgoal {
+    margin-top: 10%;
+    margin-left: 8%;
+    height: 85%;
+    width: 80%;
+    border: 3px #000;
+    border-style: dashed;
+    border-radius: 1rem;
+}
+.newgoal div {
+    margin-top: 55%;
+    font-size: 50px;
 }
 .viewer-g {
     position: absolute;
@@ -752,4 +833,81 @@ body {
     left: 4%;
     top: 10%;
     width: 90%;
+}
+/*manage-mp*/
+.setpriority {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+}
+.prioritytable {
+    width: 100%;
+    height: 100%;
+    background-color: #ccc8c8d7;
+    border: #b0aeae90 2px solid;
+    border-radius: 0.03rem;
+    box-shadow: rgba(132, 132, 132, 0.177) 8px -8px, rgba(189, 183, 187, 0.1) 16px -16px, rgba(208, 200, 205, 0.05) 24px -24px;
+    transition: all .4s;
+}
+.prioritytable:hover {
+box-shadow: 0px 0px 10px 2px #ffffffd7;
+}
+.prioritytable th,.prioritytable td{
+    text-align:center;
+    padding:3px 5px;
+    background-color: #f3f3f3d7;
+}
+.switch-holder {
+    justify-content: space-between;
+    align-items: center;
+}
+/*switch-toggle inspired by codepen.com somali*/
+
+.switch-toggle {
+    height: 30px;
+}
+
+.switch-toggle input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -2;
+}
+
+.switch-toggle input[type="checkbox"] + label {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    border-radius: 1rem;
+    margin: 0;
+    cursor: pointer;
+    background-color: rgba(135, 134, 134, 0.469);
+    box-shadow: inset 1px 1px 5px 1px rgba(88, 88, 88, 0.401),
+                inset -1px -1px 5px 1px rgba(88, 88, 88, 0.401);
+}
+
+.switch-toggle input[type="checkbox"] + label::before {
+    position: absolute;
+    content: '';
+    font-size: 13px;
+    text-align: center;
+    line-height: 20px;
+    top: 5px;
+    left: 8px;
+    width: 45px;
+    height: 20px;
+    border-radius: 1rem;
+    background-color: #eeeeeed0;
+    box-shadow: 0px 0px 3px 4px rgba(34, 33, 33, 0.109);
+    transition: .3s ease-in-out;
+}
+
+.switch-toggle input[type="checkbox"]:checked + label::before {
+    left: 48%;
+    content: '';
+    color: #fff;
+    background-color: #00b33c;
+    box-shadow: 0px 0px 3px 4px rgba(34, 33, 33, 0.109);
 }

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html style="height:100%">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
+        <title>Home</title>
+    </head>
+    <body style="height:100%">
+    <div class="toparea">
+      <p>☰</p>
+      <nav class="topnav">
+        <ul>
+          <li><a href="parent-pool-manage-su.html">Parent Pool</a></li>
+          <li id="selected"><a href="#">Family Pool</a></li>
+          <li><a href="#">Child Pool</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="sidearea">
+      <nav class="sidenav">
+        <ul>
+          <li onclick="window.location.href='family-pool-overview.html'">Overview</li>
+          <li class="menu-1st">Manage Account
+            <ul class="menu-2nd">
+              <li onclick="window.location.href='family-pool-manage-sw.html'">
+                Save/Withdraw
+              </li>
+              <li>
+                Invest
+                <ul class="menu-3rd-hidden">
+                  <li>stock</li>
+                  <li>fund</li>
+                  <li>insurance</li>
+                </ul>
+              </li>
+              <li>Loan</li>
+              <li  id="selected2" onclick="window.location.href='family-pool-manage-mp.html'">
+                Manage Pools
+              </li>
+            </ul>
+          </li>
+          <li onclick="window.location.href='family-pool-goals.html'">Set Goals</li>
+        </ul>
+        <hr>
+        <p>Welcome, Mrs. Rachel</p>
+        <img src="user.png" alt="user">
+      </nav>
+    </div>
+    <div class="container">
+      <div class="viewer">
+        <div class="setpriority">
+          <table class="prioritytable">
+            <thead>
+              <tr>
+                <th>POOLS</th>
+                <th>FUNCTIONS</th>
+                <th>
+                  PARENT
+                </th>
+                <th>
+                  CHILD
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2">
+                  Parent Pool
+                </td>
+                <td>
+                  Information Visibility
+                </td>
+                <td>
+                  <div class="switch-holder">
+                    <div class="switch-toggle">
+                        <input type="checkbox" id="a1" checked>
+                        <label for="a1"></label>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="switch-holder">
+                    <div class="switch-toggle">
+                        <input type="checkbox" id="a2">
+                        <label for="a2"></label>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Manage Money
+                </td>
+                <td>
+                  <div class="switch-holder">
+                    <div class="switch-toggle">
+                        <input type="checkbox" id="b1" checked>
+                        <label for="b1"></label>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="switch-holder">
+                    <div class="switch-toggle">
+                        <input type="checkbox" id="b2">
+                        <label for="b2"></label>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="2">
+                  Family Pool
+                </td>
+                <td>
+                  Information Visibility
+                </td>
+                <td>
+                  <div class="switch-holder">
+                    <div class="switch-toggle">
+                        <input type="checkbox" id="c1" checked>
+                        <label for="c1"></label>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="switch-holder">
+                    <div class="switch-toggle">
+                        <input type="checkbox" id="c2" checked>
+                        <label for="c2"></label>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Manage Money
+                </td>
+                <td>
+                  <div class="switch-holder">
+                    <div class="switch-toggle">
+                        <input type="checkbox" id="d1" checked>
+                        <label for="d1"></label>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="switch-holder">
+                    <div class="switch-toggle">
+                        <input type="checkbox" id="d2">
+                        <label for="d2"></label>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="4">
+                  Child Pool
+                </td>
+                <td>
+                  Information Visibility
+                </td>
+                <td>
+                  <div class="switch-holder">
+                    <div class="switch-toggle">
+                        <input type="checkbox" id="e1" checked>
+                        <label for="e1"></label>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="switch-holder">
+                    <div class="switch-toggle">
+                        <input type="checkbox" id="e2" checked>
+                        <label for="e2"></label>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Manage Money
+                </td>
+                <td>
+                  <div class="switch-holder">
+                    <div class="switch-toggle">
+                        <input type="checkbox" id="f1" checked>
+                        <label for="f1"></label>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="switch-holder">
+                    <div class="switch-toggle">
+                        <input type="checkbox" id="f2" checked>
+                        <label for="f2"></label>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+              <td>
+                Large Transfer Confirmation
+              </td>
+              <td style="width: 20%;">
+                <div class="switch-holder">
+                  <div class="switch-toggle">
+                      <input type="checkbox" id="g1">
+                      <label for="g1"></label>
+                  </div>
+                </div>
+              </td>
+              <td style="width: 20%; font-size:large;">
+                $&ThickSpace;<input type="text" name="" id="" style="width: 50%;">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Monthly Interest Rate (Earning From Family Pool)
+              </td>
+              <td colspan="2">
+                <input type="text" name="" id="" style="width: 50%; text-align:right;" value="0">%
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--TODO: set priority, change by topnav-->
+      </div>
+    </div>
+  <footer style="display: none;"><div>Pool Icons made by <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    <div>User profile Icons made by <a href="https://www.flaticon.com/authors/bombasticon-studio" title="Bombasticon Studio">Bombasticon Studio</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    <div>Majority Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    <div>Invest Icons made by <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    <div>Background made by <a href="https://www.pexels.com/zh-cn/@gradienta" title="Gradienta">Gradienta</a></div>
+    <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+  </footer>
+    <script>
+      var btn = document.getElementById("selected")
+      btn.style.backgroundColor = "lightslategray";
+      btn.style.color = "azure";
+      btn.style.boxShadow ="rgba(44, 39, 39, 0.653) 1px 10px 50px 10px";
+      btn.style.zIndex = "1";
+      document.getElementById("selected2").style.color = "silver";
+    </script>
+    </body>
+</html>

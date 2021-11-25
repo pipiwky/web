@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html style="height:100%">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
+        <title>Home</title>
+    </head>
+    <body style="height:100%">
+    <div class="toparea">
+      <p>☰</p>
+      <nav class="topnav">
+        <ul>
+          <li><a href="parent-pool-manage-fu.html">Parent Pool</a></li>
+          <li id="selected"><a href="#">Family Pool</a></li>
+          <li><a href="#">Child Pool</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="sidearea">
+      <nav class="sidenav">
+        <ul>
+          <li onclick="window.location.href='family-pool-overview.html'">Overview</li>
+          <li class="menu-1st">Manage Account
+            <ul class="menu-2nd">
+              <li onclick="window.location.href='family-pool-manage-sw.html'">
+                Save/Withdraw
+              </li>
+              <li>
+                Invest
+                <ul class="menu-3rd-hidden">
+                  <li onclick="window.location.href='family-pool-manage-st.html'">stock</li>
+                  <li onclick="window.location.href='family-pool-manage-fu.html'" id="selected2">fund</li>
+                  <li onclick="window.location.href='family-pool-manage-in.html'">insurance</li>
+                </ul>
+              </li>
+              <li>
+                Loan
+              </li>
+              <li onclick="window.location.href='family-pool-manage-mp.html'">
+                Manage Pools
+              </li>
+            </ul>
+          </li>
+          
+          <li onclick="window.location.href='family-pool-goals.html'">Set Goals</li>
+        </ul>
+        <hr>
+        <p>Welcome, Mrs. Rachel</p>
+        <img src="user.png" alt="user">
+      </nav>
+    </div>
+    <div class="container">
+      <div class="viewer1-st">
+        <p class="title1-st">Current Holdings</p>
+        <hr>
+        <div class="table1-st-container">
+          <table>
+            <tr class="table1-st-header">
+              <th>CODE</th>
+              <th>SHARES</th>
+              <th>LAST</th>
+              <th>CHANGE</th>
+            </tr>
+            <tr class="table1-st-content">
+              <td>3012</td>
+              <td>5</td>
+              <td>$21.24</td>
+              <td class="downstock">-0.14</td>
+            </tr>
+            <tr class="table1-st-content">
+              <td>2820</td>
+              <td>12</td>
+              <td>$110.35</td>
+              <td class="upstock">+2.40</td>
+            </tr>
+            <tr class="table1-st-content">
+              <td>2800</td>
+              <td>88</td>
+              <td>$24.92</td>
+              <td class="upstock">+0.06</td>
+            </tr>
+          </table>
+        </div>
+        <div class="viewer1-st-overview">
+          <p>Current Total Value</p>
+          <p>$ 3,623.36</p>
+        </div>
+      </div>
+      <div class="viewer2-st">
+        <p class="title">Market One-Year Overview</p>
+        <hr>
+        <div class="table2-st-container">
+          <table>
+            <tr class="table2-st-header">
+              <th>CODE</th>
+              <th>NAME</th>
+              <th>LAST</th>
+              <th>CHANGE</th>
+              <th>Chg%</th>
+            </tr>
+            <tr class="table2-st-content"> <!--Maybe could add a function that someone follow stock-->
+              <td>2800</td>
+              <td>Tracker Fund of Hong Kong</td>
+              <td>$24.92</td>
+              <td class="downstock">-2.02</td>
+              <td class="downstock">7.50%</td>
+            </tr>
+            <tr class="table2-st-content">
+              <td>3143</td>
+              <td>ChinaAMC Hong Kong Banks ETF</td>
+              <td>$6.78</td>
+              <td class="upstock">+0.08</td>
+              <td class="upstock">1.12%</td>
+            </tr>
+            <tr class="table2-st-content">
+              <td>2801</td>
+              <td>iShares Core MSCI China ETF</td>
+              <td>$28.64</td>
+              <td class="downstock">-5.74</td>
+              <td class="downstock">16.70%</td>
+            </tr>
+            <tr class="table2-st-content">
+              <td>3070</td>
+              <td>Ping An of China CSI HK Dividend ETF</td>
+              <td>$24.34</td>
+              <td class="downstock">-0.64</td>
+              <td class="downstock">2.56%</td>
+            </tr>
+            <tr class="table2-st-content">
+              <td>3086</td>
+              <td>ChinaAMC NASDAQ 100 ETF</td>
+              <td>$33.22</td>
+              <td class="upstock">+8.68</td>
+              <td class="upstock">35.37%</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="viewer3-st">
+          <form class="inputarea-st" method="post">
+            <dl>
+              <dt>
+                Trading Code
+              </dt>
+              <dd>
+                <input type="text">
+              </dd>
+              <dt>
+                Trading Amount
+              </dt>
+              <dd>
+                <input type="text">
+              </dd>
+              <dd><input class="formsubmit-st" type="submit" value="Confirm"></dd>
+            </dl>
+          </form>
+          <span></span>
+          <div class="previewer-st">
+            <p>Total transaction value</p>
+            <p class="output1-st">$</p> <!--no style bond to the class output-->
+            <p>Balance after transaction</p>
+            <p class="output2-st">$</p>
+          </div>
+
+      </div>
+    </div>
+    <script>
+      var btn = document.getElementById("selected")
+      btn.style.backgroundColor = "lightslategray";
+      btn.style.color = "azure";
+      btn.style.boxShadow ="rgba(44, 39, 39, 0.653) 1px 10px 50px 10px";
+      btn.style.zIndex = "1";
+      document.getElementById("selected2").style.color = "silver";
+    </script>
+    <footer style="display: none;"><div>Pool Icons made by <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+      <div>User profile Icons made by <a href="https://www.flaticon.com/authors/bombasticon-studio" title="Bombasticon Studio">Bombasticon Studio</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+      <div>Majority Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+      <div>Invest Icons made by <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+      <div>Background made by <a href="https://www.pexels.com/zh-cn/@gradienta" title="Gradienta">Gradienta</a></div>
+      <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+      <div>Icons made by <a href="https://www.flaticon.com/authors/justicon" title="justicon">justicon</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+      <div>Icons made by <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    </footer>
+    </body>
+</html>
+    
