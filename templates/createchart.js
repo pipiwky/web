@@ -238,23 +238,26 @@ function createOIchart(){
   const datasetA = {
     dimensions: ['product', 'value'],
     source: [
-      ['A', 10],
-      ['B', 30],
-      ['C', 10]
+      ['Pools Transferred', 10],
+      ['External Earnings', 30],
+      ['Savings', 20]
     ]
   };
   const datasetL = {
     dimensions: ['product', 'value'],
     source: [
-      ['A', 13],
-      ['B', 21]
+      ['Food', 13],
+      ['Transportation', 10],
+      ['Entertainment', 11],
+      ['Others',9],
+      ['Investment',23]
     ]
   };
   const datasetO = {
     dimensions: ['product', 'value'],
     source: [
       ['Income', 88],
-      ['Outgoing', 12]
+      ['Outgoing', 72]
     ]
   };
   const OptionA = {

@@ -12,9 +12,9 @@
       <p>☰</p>
       <nav class="topnav">
         <ul>
-          <li><a href="parent-pool-manage-in.html">Parent Pool</a></li>
-          <li id="selected"><a href="#">Family Pool</a></li>
-          <li><a href="#">Child Pool</a></li>
+          <li id="selected"><a href="#">Parent Pool</a></li>
+          <li><a href="family-pool-manage-lo.html">Family Pool</a></li>
+          <li><a href="child-pool-overview.html">Child Pool</a></li>
         </ul>
       </nav>
     </div>
@@ -22,29 +22,29 @@
     <div class="sidearea">
       <nav class="sidenav">
         <ul>
-          <li onclick="window.location.href='family-pool-overview.html'">Overview</li>
+          <li onclick="window.location.href='parent-pool-overview.html'">Overview</li>
           <li class="menu-1st">Manage Account
             <ul class="menu-2nd">
-              <li onclick="window.location.href='family-pool-manage-sw.html'">
+              <li onclick="window.location.href='parent-pool-manage-sw.html'">
                 Save/Withdraw
               </li>
               <li>
                 Invest
                 <ul class="menu-3rd-hidden">
-                  <li onclick="window.location.href='family-pool-manage-st.html'">stock</li>
-                  <li onclick="window.location.href='family-pool-manage-fu.html'">fund</li>
-                  <li id="selected2">insurance</li>
+                  <li onclick="window.location.href='parent-pool-manage-st.html'">stock</li>
+                  <li onclick="window.location.href='parent-pool-manage-fu.html'">fund</li>
+                  <li onclick="window.location.href='parent-pool-manage-in.html'">insurance</li>
                 </ul>
               </li>
-              <li onclick="window.location.href='family-pool-manage-lo.html'">
+              <li id="selected2" >
                 Loan
               </li>
-              <li onclick="window.location.href='family-pool-manage-mp.html'">
+              <li onclick="window.location.href='parent-pool-manage-mp.html'">
                 Manage Pools
               </li>
             </ul>
           </li>
-          <li onclick="window.location.href='family-pool-goals.html'">Set Goals</li>
+          <li onclick="window.location.href='parent-pool-goals.html'">Set Goals</li>
         </ul>
         <hr>
         <p>Welcome, Mrs. Rachel</p>
@@ -56,157 +56,125 @@
         <nav class="nav-in">
           <ul class="tablenav-in">
             <li id="tb1-in" onclick="changenavin(1)">
-              Holdings<span id="tb1-in-s"></span>
+              Current<span id="tb1-in-s"></span>
             </li>
             <li id="tb2-in" style="left: 60%;" onclick="changenavin(2)">
-              Purchase<span id="tb2-in-s"></span>
+              Get a New Loan<span id="tb2-in-s"></span>
             </li>
           </ul>
         </nav>
-      <div class="information-in" id="table-in-1">
-        <p class="title">Current Insurance Overview</p>
-        <hr>
-      <div class="insurecard">
-        <p class="title">
-          Cancer Protection
-        </p>
-        <div>
-          <p class="subtitle">
-            Benefit Members
-          </p><hr>
-          <p>
-            Rachel, Alan, Bob
-          </p><hr>
-          <p class="subtitle">
-            Remaining Term
-          </p><hr>
-          <p>
-            4 Years
-          </p><hr>
-          <p class="subtitle">Monthly Payment</p><hr>
-          <p>$ 200</p><hr>
-          <p>&ThinSpace;</p><hr>
-          <p>&ThinSpace;</p><hr>
-        </div>
-      </div>
-      <div class="insurecard" style="left: 35%;">
-        <p class="title">
-          Life Insurance
-        </p>
-        <div>
-          <p class="subtitle">
-            Benefit Members
-          </p><hr>
-          <p>
-            Rachel, Alan, Bob
-          </p><hr>
-          <p class="subtitle">
-            Remaining Term
-          </p><hr>
-          <p>
-            9 Years
-          </p><hr>
-          <p class="subtitle">Monthly Payment</p><hr>
-          <p>$ 439</p><hr>
-          <p>&ThinSpace;</p><hr>
-          <p>&ThinSpace;</p><hr>
-        </div>
-      </div>
-      <div class="insurecard" style="left: 65%;">
-        <p class="title">
-          More to Invest...
-        </p>
-        <div>
-          <p>&ThinSpace;</p><hr>
-          <p>&ThinSpace;</p><hr>
-          <p>&ThinSpace;</p><hr>
-          <p>&ThinSpace;</p><hr>
-          <p>&ThinSpace;</p><hr>
-          <p>&ThinSpace;</p><hr>
-          <p>&ThinSpace;</p><hr>
-          <p>&ThinSpace;</p><hr>
-        </div>
-      </div>
-    </div>
-    <div class="table-in"id="table-in-2" style="height: 0;">
-      <div class="purchase-in">
-        <p>Purchase Our Product</p>
-        <div class="insuretable1">
-          <ul id="prods"><!--Demo types inspired by ZA bank-->
-            <li onclick="changeprod(0)">
-              Life Insurance
-            </li>
-            <li onclick="changeprod(1)">
-              Accident Protection
-            </li>
-            <li onclick="changeprod(2)">
-              Cancer Protection
-            </li>
-            <li onclick="changeprod(3)">
-              Travel Insurance
-            </li>
-          </ul>
-        </div>
-        <p>Family Members</p>
-        <div class="insuretable2">
-          <ul>
-            <li onclick="changemem(this)">
-              Rachel
-            </li>
-            <li onclick="changemem(this)">
-              Alan
-            </li>
-            <li onclick="changemem(this)">
-              Bob
-            </li>
-          </ul>
-        </div>
-        <p>Sum Insured</p>
-        <div class="insuretable3">
-          <div class="form-container-in"> <!--Style Inspired by https://codepen.io/brandonmcconnell/pen/Zqjdmg -->
-            <form class="form-in" method="GET">
-              <div class="sum-ranger">
-                <input type="radio" name="amount" id="1" value="1" required>
-                <label for="1" sum-amount="< $10k"></label>
-                <input type="radio" name="amount" id="2" value="2" required>
-                <label for="2" sum-amount="$10k-25k"></label>
-                <input type="radio" name="amount" id="3" value="3" required>
-                <label for="3" sum-amount="$25k-50k"></label>
-                <input type="radio" name="amount" id="4" value="4" required>
-                <label for="4" sum-amount="$50k-100k"></label>
-                <input type="radio" name="amount" id="5" value="5" required>
-                <label for="5" sum-amount="$100k+"></label>
-                <div class="ranger-position"></div>
-              </div>
-            </form>
+        <div class="information-in" id="table-in-1">
+          <p class="title">Current Insurance Overview</p>
+          <hr>
+        <div class="loancard">
+          <p class="title">
+            Loan 1
+          </p>
+          <div>
+            <p class="subtitle">
+              Total Amount
+            </p><hr>
+            <p>
+              $ 20,000
+            </p><hr>
+            <p class="subtitle">
+              Remaining Period
+            </p><hr>
+            <p>
+              12 Months
+            </p><hr>
+            <p class="subtitle">Monthly Repayment Amount</p><hr>
+            <p>$ 1,714.70</p><hr>
+            <p class="subtitle">Monthly Flat Rate</p><hr>
+            <p>0.24%</p><hr>
           </div>
-          <p>Benefit Term</p>
-          <div class="form-container-in"> <!--Style Inspired by https://codepen.io/brandonmcconnell/pen/Zqjdmg -->
-            <form class="form-in" method="GET">
-              <div class="sum-ranger">
-                <input type="radio" name="amount" id="6" value="1" required>
-                <label for="6" sum-amount="1 Year"></label>
-                <input type="radio" name="amount" id="7" value="2" required>
-                <label for="7" sum-amount="5 Years"></label>
-                <input type="radio" name="amount" id="8" value="3" required>
-                <label for="8" sum-amount="10 Years"></label>
-                <input type="radio" name="amount" id="9" value="4" required>
-                <label for="9" sum-amount="20 Years"></label>
-                <input type="radio" name="amount" id="10" value="5" required>
-                <label for="10" sum-amount="50 Years"></label>
-                <div class="ranger-position"></div>
-              </div>
-            </form>
-            <button type="submit">PURCHASE NOW!</button>
+        </div>
+        <div class="loancard" style="left: 35%;">
+          <p class="title">
+            Loan 2
+          </p>
+          <div>
+            <p class="subtitle">
+              Total Amount
+            </p><hr>
+            <p>
+              $ 250,000
+            </p><hr>
+            <p class="subtitle">
+              Remaining Period
+            </p><hr>
+            <p>
+              60 Months
+            </p><hr>
+            <p class="subtitle">Monthly Repayment Amount</p><hr>
+            <p>$ 4,591.70</p><hr>
+            <p class="subtitle">Monthly Flat Rate</p><hr>
+            <p>0.17%</p><hr>
           </div>
+        </div>
       </div>
-    </div>
-  </div>
+        <div class="table-in"id="table-in-2" style="height: 0;">
+          <div class="purchase-lo">
+            <p>Loan Amount</p>
+            <div class="loantable1">
+              <div>
+                <span id="loanrange-value">$10000</span>
+                <input class="loanrange" type="range" value="10" min="10" max="200" onChange="rangeviewer(this.value)" onmousemove="rangeviewer(this.value)">
+            </div>
+            </div>
+            <p>Repayment Period</p>
+            <div class="loantable2">
+              <div class="form-container-lo"> <!--Style Inspired by https://codepen.io/brandonmcconnell/pen/Zqjdmg -->
+                <form class="form-lo" method="GET">
+                  <div class="sum-ranger">
+                    <input type="radio" name="amount" id="6" value="1" required>
+                    <label for="6" sum-amount="6 Months"></label>
+                    <input type="radio" name="amount" id="7" value="2" required>
+                    <label for="7" sum-amount="12 Months"></label>
+                    <input type="radio" name="amount" id="8" value="3" required>
+                    <label for="8" sum-amount="24 Months"></label>
+                    <input type="radio" name="amount" id="9" value="4" required>
+                    <label for="9" sum-amount="56 Months"></label>
+                    <input type="radio" name="amount" id="10" value="5" required>
+                    <label for="10" sum-amount="60 Months"></label>
+                    <div class="ranger-position"></div>
+                  </div>
+                </form>
+                <button type="submit">CONFIRM</button>
+              </div>
+          </div>
+        </div>
+        <div class="loanprev">
+          <p class="title">Preview</p>
+          <div>
+            <p class="subtitle">Monthly Repayment</p><hr>
+            <p id="month-value">10000</p><hr>
+            <p class="subtitle">Monthly Flat Rate</p><hr>
+            <p id="month-rate">1%</p><hr>
+            <p class="subtitle">APR</p><hr>
+            <p id="APR">5%</p><hr>
+          </div>
+        </div>
+        
+      </div>
+
     </div>
     </div>
     <script>
       var a=0;
       var prev;
+      function rangeviewer(value) {
+        document.getElementById('loanrange-value').innerHTML = '$'+1000*value;
+        var x = (800+value*80.56);
+        x = x.toFixed(2);
+        document.getElementById('month-value').innerHTML = '$'+ x;
+        var xx = (2-value/199)/10;
+        xx = xx.toFixed(2);
+        document.getElementById('month-rate').innerHTML = xx+'%';
+        var xxx=xx*xx*100*Math.sqrt(xx)*3.3;
+        xxx = xxx.toFixed(2);
+        document.getElementById('APR').innerHTML = xxx +'%';
+    }
       function changenavin(selecter){
         var tb1in1 = document.getElementById("tb1-in");
         var tbspan1 = document.getElementById("tb1-in-s");
@@ -236,7 +204,7 @@
           transition: all 0.3s ease;
           `
           table2.style.height = '0';
-          setTimeout(function() {table1.style.height = '100%'},600);
+          setTimeout(function(){table1.style.height = '100%'},600);
         }
         else
         {
@@ -260,7 +228,7 @@
           transition: all 0.3s ease;
           `
           table1.style.height = '0';
-          setTimeout(function() {table2.style.height = '100%'},600);
+          setTimeout(function(){table2.style.height = '100%'},600);
         }
       }
 
