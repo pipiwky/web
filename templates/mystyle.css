@@ -602,7 +602,7 @@ body {
     color: rgb(255, 255, 255);
 }
 .viewer1-st .table1-st-content {
-    background-color: rgba(208, 206, 206, 0.156);
+    background-color: rgba(255, 255, 255, 0.5);
     color: rgb(73, 72, 72);
     line-height: 3;
     box-shadow: rgb(137, 135, 135) 1px -6px 26px 0px; 
@@ -656,7 +656,7 @@ body {
     color: rgb(255, 255, 255);
 }
 .viewer2-st .table2-st-content {
-    background-color: rgba(208, 206, 206, 0.156);
+    background-color: rgba(255, 255, 255, 0.5);
     color: rgb(73, 72, 72);
     line-height: 3;
     box-shadow: rgb(137, 135, 135) 1px -6px 26px 0px;
@@ -1067,7 +1067,7 @@ box-shadow: 0px 0px 10px 2px #ffffffd7;
     transition: all 0.5s;
 }
 .purchase-in p {
-    margin: 45px 30px 10px 30px;
+    margin: 30px 30px 10px 30px;
     font-size: x-large;
     font-weight: 600;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -1075,7 +1075,7 @@ box-shadow: 0px 0px 10px 2px #ffffffd7;
 .insuretable1 {
     position: relative;
     width: 90%;
-    height: 20%;
+    height: 10%;
     margin: 10px 10px 10px 4.7%;
     border: 5px solid rgba(189, 189, 186, 0.49);
     border-right: 0;
@@ -1091,7 +1091,7 @@ box-shadow: 0px 0px 10px 2px #ffffffd7;
     border: 2px solid #d3d3d34a;
     border-radius: 10%;
     padding: 0px;
-    height: 60px;
+    height: 10%;
     width: 20%;
     margin-left: 2%;
     font-size:medium;
