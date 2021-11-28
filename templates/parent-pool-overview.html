@@ -247,21 +247,20 @@ function createOIchart(){
 
 
   setTimeout(function () {
-  const datasetA = {
-    dimensions: ['product', 'value'],
-    source: [
-      ['A', 10],
-      ['B', 30],
-      ['C', 10]
-    ]
-  };
-  const datasetL = {
-    dimensions: ['product', 'value'],
-    source: [
-      ['A', 13],
-      ['B', 21]
-    ]
-  };
+    const datasetA = {
+      dimensions: ['product', 'value'],
+      source: [
+        ['Saving', 32],
+        ['Transferring', 56]
+      ]
+    };
+    const datasetL = {
+      dimensions: ['product', 'value'],
+      source: [
+        ['Investment', 9],
+        ['Entertainment',3]
+      ]
+    };
   const datasetO = {
     dimensions: ['product', 'value'],
     source: [
@@ -459,7 +458,7 @@ function createOIchart(){
         <span class="slider"></span>
         <div class="card-overview">
           <h3>Overview</h3><hr>
-          <ul>Liability: {{tmp_dict['Liability']}}
+          <ul>Liability: {{tmp_dict['Liabilities']}}
             <li>
               Loan: {{tmp_dict['Loan']}}
             </li>

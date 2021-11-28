@@ -250,23 +250,23 @@ function createOIchart(){
   const datasetA = {
     dimensions: ['product', 'value'],
     source: [
-      ['A', 10],
-      ['B', 30],
-      ['C', 10]
+      ['Saving', 32],
+      ['Transferring', 56]
     ]
   };
   const datasetL = {
     dimensions: ['product', 'value'],
     source: [
-      ['A', 13],
-      ['B', 21]
+      ['Food', 33],
+      ['Transport', 21],
+      ['Entertainment',8]
     ]
   };
   const datasetO = {
     dimensions: ['product', 'value'],
     source: [
       ['Income', 88],
-      ['Outgoing', 12]
+      ['Outgoing', 62]
     ]
   };
   const OptionA = {
@@ -470,7 +470,7 @@ function createOIchart(){
         <span class="slider"></span>
         <div class="card-overview">
           <h3>Overview</h3><hr>
-          <ul>Liability: {{tmp_dict['Liability']}}
+          <ul>Liability: {{tmp_dict['Liabilities']}}
             <li>
               Loan: {{tmp_dict['Loan']}}
             </li>
@@ -495,7 +495,7 @@ function createOIchart(){
               Income Today: 88
             </li>
             <li>
-              Outgoing Today: 72
+              Outgoing Today: 62
             </li>
           </ul>
         </div>
