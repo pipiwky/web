@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html style="height:100%">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='tmp.css') }}">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>
+        <title>Home</title>
+    </head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <body style="height:100%">
+    <div class="toparea">
+      <p>☰</p>
+      <nav class="topnav">
+        <ul>
+            <li><a href="{{ url_for( 'parent_pool_overview') }}" id = 'a'>Parent Pool</a></li>
+          <li onclick="window.location.href='{{ url_for( 'family_pool_overview') }}';">Family Pool</a></li>
+          <li id="selected"><a href="children-pool.html">Children Pool</a></li>
+        </ul>
+      </nav>
+    </div>
+    <script>
+        var a=document.getElementById('a')
+        a.onclick = function(){
+            if({{tmp_dict['flag']}}==0){
+            alert('Permission');
+            return false;
+            }
+            else{
+            return true;
+            }
+        }
+    </script>
+    <div class="sidearea">
+      <nav class="sidenav">
+        <ul>
+          <li onclick="window.location.href='{{ url_for( 'children_pool') }}';">Balance</li>
+          <li onclick="window.location.href='{{ url_for( 'children_pool_sr') }}';">Spending Record</li>
+            <li id = "selected2">Money Box</li>>
+        </ul>
+        <hr>
+        <p>Welcome, Bob</p>
+        <img src="parent.png" alt="parent">
+      </nav>
+    </div>
+    <div class="container">
+        <div class ="viewer">
+      <div class="insurecard">
+        <p class="title">
+          Saving
+        </p>
+        <div>
+          <p class="subtitle">
+            Scholarships
+          </p><hr>
+          <p>
+            Date: 17/09/2016
+          </p><hr>
+          <p>
+            $ 30
+          </p><hr>
+          <p class="subtitle">
+            Rewards from parents
+          </p><hr>
+          <p>
+            Date: 17/05/2010
+          </p><hr>
+          <p>
+            $ 20
+          </p><hr>
+          <p>&ThinSpace;</p><hr>
+          <p>&ThinSpace;</p><hr>
+        </div>
+        </div>
+        <div>
+
+        </div>
+        <div class = "card1-overview">
+          <ul>
+            <li>
+              Mouthly Rate : 0.5%
+            </li>
+            <li>
+              Today Income:$ 10
+            </li>
+          </ul>
+
+            </div>
+                <div class="table-sw">
+          <nav>
+            <ul class="tablenav-sw">
+              <li id="tb1" onclick="changenav(1);changearea(1)">
+                Save
+              </li>
+              <li id="tb2" onclick="changenav(2);changearea(1)">
+                Withdraw
+              </li>
+            </ul>
+          </nav>
+            <div class="inputer-sw">
+            <div class="inputarea-sw" id="swarea">
+              <p>Please enter the amount (Unit: $)</p>
+              <input type="text" name = "save" value="">
+              <button>submit</button>
+            </div>
+            </div>
+
+    </div>
+    <script>
+      var btn = document.getElementById("selected")
+      btn.style.backgroundColor = "lightslategray";
+      btn.style.color = "azure";
+      btn.style.boxShadow ="rgba(44, 39, 39, 0.653) 1px 10px 50px 10px";
+      btn.style.zIndex = "1";
+    </script>
+        <script>
+      var btn = document.getElementById("selected")
+      btn.style.backgroundColor = "lightslategray";
+      btn.style.color = "azure";
+      btn.style.boxShadow ="rgba(44, 39, 39, 0.653) 1px 10px 50px 10px";
+      btn.style.zIndex = "1";
+      document.getElementById("selected2").style.color = "silver";
+      function changenav(selecter){
+        tb1 = document.getElementById("tb1");
+        tb2 = document.getElementById("tb2");
+        tb3 = document.getElementById("tb3");
+        if(selecter == 1){
+          tb1.style = `
+          background: linear-gradient(160deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) right;
+          background-size: 50.003% 100%;
+          background-repeat: no-repeat;
+          z-index: 3;
+          box-shadow:  30px 10px 20px -12px rgba(0, 0, 0, 0.283);
+          `
+          tb2.style = `
+          background: linear-gradient(160deg, transparent 10px, rgba(220, 216, 216, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(214, 211, 211, 0.87) 0) right;
+          background-size: 50.007% 100%;
+          background-repeat: no-repeat;
+          box-shadow: none;
+          `
+          tb3.style = `
+          background: linear-gradient(160deg, transparent 10px, rgba(220, 216, 216, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(214, 211, 211, 0.87) 0) right;
+          background-size: 50.007% 100%;
+          background-repeat: no-repeat;
+          box-shadow: none;
+          `
+        }
+        else if(selecter == 2)
+          {
+            tb1.style = `
+            background: linear-gradient(160deg, transparent 10px, rgba(220, 216, 216, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(214, 211, 211, 0.87) 0) right;
+            background-size: 50.007% 100%;
+            background-repeat: no-repeat;
+            box-shadow: none;
+            `
+            tb2.style = `
+            background: linear-gradient(160deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) right;
+            background-size: 50.003% 100%;
+            background-repeat: no-repeat;
+            z-index: 3;
+            box-shadow:  0px 22px 20px 0px rgba(0, 0, 0, 0.22);
+            `
+            tb3.style = `
+            background: linear-gradient(160deg, transparent 10px, rgba(220, 216, 216, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(214, 211, 211, 0.87) 0) right;
+            background-size: 50.007% 100%;
+            background-repeat: no-repeat;
+            box-shadow: none;
+            `
+          }
+          else
+          {
+            tb1.style = `
+            background: linear-gradient(160deg, transparent 10px, rgba(220, 216, 216, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(214, 211, 211, 0.87) 0) right;
+            background-size: 50.007% 100%;
+            background-repeat: no-repeat;
+            box-shadow: none;
+            `
+            tb3.style = `
+            background: linear-gradient(160deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) right;
+            background-size: 50.003% 100%;
+            background-repeat: no-repeat;
+            z-index: 3;
+            box-shadow:  -30px 10px 20px -12px rgba(0, 0, 0, 0.283);
+            `
+            tb2.style = `
+            background: linear-gradient(160deg, transparent 10px, rgba(220, 216, 216, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(214, 211, 211, 0.87) 0) right;
+            background-size: 50.007% 100%;
+            background-repeat: no-repeat;
+            box-shadow: none;
+            `
+          }
+      }
+      function changearea(selecter){
+        trarea = document.getElementById("trarea");
+        swarea = document.getElementById("swarea");
+        if (selecter==1){
+          trarea.style = `height:0;`
+        }
+        else
+        {
+          trarea.style = `height: 100%;`
+        }
+      }
+      function changebtn(selecter){
+        if(selecter==1)
+        {
+          document.getElementById("tra1").style = `
+          transform: scale(1.12);
+          transition: all 0.14s;
+          color: rgb(52, 52, 52);
+          background-color: #f1f1f1;
+          `
+          document.getElementById("tra2").style = `
+          border:2px rgba(140, 140, 140, 0.864);
+          border-style: solid;
+          border-radius: 3%;
+          margin-bottom: 0.5%;
+          margin-top: 2%;
+          padding: 0px;
+          height: 25%;
+          color: #ffffff8e;
+          display: block;
+          line-height: 2;
+          cursor: pointer;
+          background-color: rgba(152, 152, 152, 0.646);
+          transition: all 0.14s;
+          `
+          document.getElementById("tra3").style = `
+          border:2px rgba(140, 140, 140, 0.864);
+          border-style: solid;
+          border-radius: 3%;
+          margin-bottom: 0.5%;
+          margin-top: 2%;
+          padding: 0px;
+          height: 25%;
+          color: #ffffff8e;
+          display: block;
+          line-height: 2;
+          cursor: pointer;
+          background-color: rgba(152, 152, 152, 0.646);
+          transition: all 0.14s;
+          `
+        }
+        else if (selecter==2)
+        {
+          document.getElementById("tra2").style = `
+          transform: scale(1.12);
+          transition: all 0.14s;
+          color: rgb(52, 52, 52);
+          background-color: #f1f1f1;
+          `
+          document.getElementById("tra1").style = `
+          border:2px rgba(140, 140, 140, 0.864);
+          border-style: solid;
+          border-radius: 3%;
+          margin-bottom: 0.5%;
+          margin-top: 2%;
+          padding: 0px;
+          height: 25%;
+          color: #ffffff8e;
+          display: block;
+          line-height: 2;
+          cursor: pointer;
+          background-color: rgba(152, 152, 152, 0.646);
+          transition: all 0.14s;
+          `
+          document.getElementById("tra3").style = `
+          border:2px rgba(140, 140, 140, 0.864);
+          border-style: solid;
+          border-radius: 3%;
+          margin-bottom: 0.5%;
+          margin-top: 2%;
+          padding: 0px;
+          height: 25%;
+          color: #ffffff8e;
+          display: block;
+          line-height: 2;
+          cursor: pointer;
+          background-color: rgba(152, 152, 152, 0.646);
+          transition: all 0.14s;
+          `
+        }
+        else if (selecter==3)
+        {
+          document.getElementById("tra3").style = `
+          transform: scale(1.12);
+          transition: all 0.14s;
+          color: rgb(52, 52, 52);
+          background-color: #f1f1f1;
+          `
+          document.getElementById("tra1").style = `
+          border:2px rgba(140, 140, 140, 0.864);
+          border-style: solid;
+          border-radius: 3%;
+          margin-bottom: 0.5%;
+          margin-top: 2%;
+          padding: 0px;
+          height: 25%;
+          color: #ffffff8e;
+          display: block;
+          line-height: 2;
+          cursor: pointer;
+          background-color: rgba(152, 152, 152, 0.646);
+          transition: all 0.14s;
+          `
+          document.getElementById("tra2").style = `
+          border:2px rgba(140, 140, 140, 0.864);
+          border-style: solid;
+          border-radius: 3%;
+          margin-bottom: 0.5%;
+          margin-top: 2%;
+          padding: 0px;
+          height: 25%;
+          color: #ffffff8e;
+          display: block;
+          line-height: 2;
+          cursor: pointer;
+          background-color: rgba(152, 152, 152, 0.646);
+          transition: all 0.14s;
+          `
+        }
+        else if (selecter==4)
+        {
+          document.getElementById("trb1").style = `
+          transform: scale(1.12);
+          transition: all 0.14s;
+          color: rgb(52, 52, 52);
+          background-color: #f1f1f1;
+          `
+          document.getElementById("trb2").style = `
+          border:2px rgba(140, 140, 140, 0.864);
+          border-style: solid;
+          border-radius: 3%;
+          margin-bottom: 0.5%;
+          margin-top: 2%;
+          padding: 0px;
+          height: 25%;
+          color: #ffffff8e;
+          display: block;
+          line-height: 2;
+          cursor: pointer;
+          background-color: rgba(152, 152, 152, 0.646);
+          transition: all 0.14s;
+          `
+          document.getElementById("trb3").style = `
+          border:2px rgba(140, 140, 140, 0.864);
+          border-style: solid;
+          border-radius: 3%;
+          margin-bottom: 0.5%;
+          margin-top: 2%;
+          padding: 0px;
+          height: 25%;
+          color: #ffffff8e;
+          display: block;
+          line-height: 2;
+          cursor: pointer;
+          background-color: rgba(152, 152, 152, 0.646);
+          transition: all 0.14s;
+          `
+        }
+        else if (selecter==5)
+        {
+          document.getElementById("trb2").style = `
+          transform: scale(1.12);
+          transition: all 0.14s;
+          color: rgb(52, 52, 52);
+          background-color: #f1f1f1;
+          `
+          document.getElementById("trb1").style = `
+          border:2px rgba(140, 140, 140, 0.864);
+          border-style: solid;
+          border-radius: 3%;
+          margin-bottom: 0.5%;
+          margin-top: 2%;
+          padding: 0px;
+          height: 25%;
+          color: #ffffff8e;
+          display: block;
+          line-height: 2;
+          cursor: pointer;
+          background-color: rgba(152, 152, 152, 0.646);
+          transition: all 0.14s;
+          `
+          document.getElementById("trb3").style = `
+          border:2px rgba(140, 140, 140, 0.864);
+          border-style: solid;
+          border-radius: 3%;
+          margin-bottom: 0.5%;
+          margin-top: 2%;
+          padding: 0px;
+          height: 25%;
+          color: #ffffff8e;
+          display: block;
+          line-height: 2;
+          cursor: pointer;
+          background-color: rgba(152, 152, 152, 0.646);
+          transition: all 0.14s;
+          `
+        }
+        else if (selecter==6)
+        {
+          document.getElementById("trb3").style = `
+          transform: scale(1.12);
+          transition: all 0.14s;
+          color: rgb(52, 52, 52);
+          background-color: #f1f1f1;
+          `
+          document.getElementById("trb2").style = `
+          border:2px rgba(140, 140, 140, 0.864);
+          border-style: solid;
+          border-radius: 3%;
+          margin-bottom: 0.5%;
+          margin-top: 2%;
+          padding: 0px;
+          height: 25%;
+          color: #ffffff8e;
+          display: block;
+          line-height: 2;
+          cursor: pointer;
+          background-color: rgba(152, 152, 152, 0.646);
+          transition: all 0.14s;
+          `
+          document.getElementById("trb1").style = `
+          border:2px rgba(140, 140, 140, 0.864);
+          border-style: solid;
+          border-radius: 3%;
+          margin-bottom: 0.5%;
+          margin-top: 2%;
+          padding: 0px;
+          height: 25%;
+          color: #ffffff8e;
+          display: block;
+          line-height: 2;
+          cursor: pointer;
+          background-color: rgba(152, 152, 152, 0.646);
+          transition: all 0.14s;
+          `
+        }
+      }
+
+    </script>
+    </body>
+</html>
+

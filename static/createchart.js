@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<html style="height:100%">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='mystyle.css') }}">
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>
-        <script type="text/javascript" src="createchart.js"></script>
-        <title>Home</title>
-    </head>
-    <script>
-            function createALchart(){
-  var dom = document.getElementById("chart1");
+function createALchart(){
+  var dom = document.getElementById("chart1"); 
   var bin = echarts.getInstanceByDom(dom)
   if (typeof bin !== 'undefined'){
     bin.clear()
@@ -40,7 +28,7 @@
   const datasetO = {
     dimensions: ['product', 'value'],
     source: [
-      ['Assets', {{tmp_dict['Assets']}}],
+      ['Assets', {{tmp_dict['Asset']}}],
       ['Liabilities', {{tmp_dict['Liabilities']}}]
     ]
   };
@@ -216,7 +204,7 @@
       `
       mask.innerHTML = (insertbtn);
     }
-
+    
   });
   myChart.on('mouseout', function(params) {
     if(params.seriesType == 'pie') {
@@ -236,7 +224,7 @@
   }
 }
 function createOIchart(){
-  var dom = document.getElementById("chart2");
+  var dom = document.getElementById("chart2"); 
   bin = echarts.getInstanceByDom(dom);
   if (typeof bin !== 'undefined'){
     bin.clear()
@@ -250,23 +238,26 @@ function createOIchart(){
   const datasetA = {
     dimensions: ['product', 'value'],
     source: [
-      ['A', 10],
-      ['B', 30],
-      ['C', 10]
+      ['Pools Transferred', 10],
+      ['External Earnings', 30],
+      ['Savings', 20]
     ]
   };
   const datasetL = {
     dimensions: ['product', 'value'],
     source: [
-      ['A', 13],
-      ['B', 21]
+      ['Food', 13],
+      ['Transportation', 10],
+      ['Entertainment', 11],
+      ['Others',9],
+      ['Investment',23]
     ]
   };
   const datasetO = {
     dimensions: ['product', 'value'],
     source: [
       ['Income', 88],
-      ['Outgoing', 12]
+      ['Outgoing', 72]
     ]
   };
   const OptionA = {
@@ -405,109 +396,3 @@ function createOIchart(){
     myChart.setOption(option);
   }
 }
-        </script>
-    <body style="height:100%">
-    <div class="toparea">
-      <p>☰</p>
-      <nav class="topnav">
-        <ul>
-          <li id="selected"><a href="#">Parent Pool</a></li>
-          <li ><a onclick="window.location.href='{{ url_for( 'family_pool_overview') }}';">Family Pool</a></li>
-          <li><a onclick="window.location.href='{{ url_for( 'children_pool') }}';">Child Pool</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <div class="sidearea">
-      <nav class="sidenav">
-        <ul>
-          <li id="selected2">Overview</li>
-          <li class="menu-1st" onclick="window.location.href='{{ url_for( 'parent_pool_manage') }}';">Manage Account
-          <ul class="menu-2nd-hidden">
-            <li onclick="window.location.href='{{ url_for( 'parent_pool_manage_sw') }}';">
-              Save/Withdraw
-            </li>
-            <li>
-              Invest
-                <ul>
-                  <li onclick="window.location.href='{{ url_for( 'parent_pool_manage_st') }}';">stock</li>
-                  <li onclick="window.location.href='{{ url_for( 'parent_pool_manage_fu') }}';">fund</li>
-                  <li onclick="window.location.href='{{ url_for( 'parent_pool_manage_in') }}';">insurance</li>
-                </ul>
-            </li>
-            <li onclick="window.location.href='{{ url_for( 'parent_pool_manage_lo') }}';">
-              Loan
-            </li>
-            <li onclick="window.location.href='{{ url_for( 'parent_pool_manage_mp') }}';">
-              Manage Pools
-            </li>
-          </ul>
-          </li>
-          <li onclick="window.location.href='{{ url_for( 'parent_pool_goal') }}';">Set Goals</li>
-        </ul>
-        <hr>
-        <p>Welcome, Mrs. Rachel</p>
-        <img src="user.png" alt="user">
-      </nav>
-    </div>
-    <div class="container">
-      <div class="viewer">
-        <div class="chart-container">
-          <div id="chart1"></div>
-          <div id="chart2"></div>
-        </div>
-        <span class="slider"></span>
-        <div class="card-overview">
-          <h3>Overview</h3><hr>
-          <ul>Liability: {{tmp_dict['Liability']}}
-            <li>
-              Loan: {{tmp_dict['Loan']}}
-            </li>
-            <li>
-              Insurance: {{tmp_dict['Insurance']}}
-            </li>
-          </ul>
-          <hr>
-          <ul>Asset: {{tmp_dict['Assets']}}
-            <li>
-              Investment: {{tmp_dict['Investment']}}
-            </li>
-            <li>
-              Time Deposit: {{tmp_dict['time_deposit']}}
-            </li>
-            <li>
-              Demand Deposit: {{tmp_dict['demand_deposit']}}
-            </li>
-          </ul>
-          <ul><hr>
-            <li>
-              Income Today: 88
-            </li>
-            <li>
-              Outgoing Today: 72
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <footer style="display: none;"><div>Pool Icons made by <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-      <div>User profile Icons made by <a href="https://www.flaticon.com/authors/bombasticon-studio" title="Bombasticon Studio">Bombasticon Studio</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-      <div>Majority Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-      <div>Invest Icons made by <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-      <div>Background made by <a href="https://www.pexels.com/zh-cn/@gradienta" title="Gradienta">Gradienta</a></div>
-      <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-      <div>Icons made by <a href="https://www.flaticon.com/authors/justicon" title="justicon">justicon</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-      <div>Icons made by <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-    </footer>
-    <script>
-      var btn = document.getElementById("selected")
-      btn.style.backgroundColor = "lightslategray";
-      btn.style.color = "azure";
-      btn.style.boxShadow ="rgba(44, 39, 39, 0.653) 1px 10px 50px 10px";
-      btn.style.zIndex = "1";
-      document.getElementById("selected2").style.color = "silver";
-      createALchart();
-      createOIchart();
-    </script>
-    </body>
-</html>

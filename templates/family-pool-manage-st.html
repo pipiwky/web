@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="mystyle.css">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='mystyle.css')}}">
         <title>Home</title>
     </head>
     <body style="height:100%">
@@ -12,9 +12,9 @@
       <p>☰</p>
       <nav class="topnav">
         <ul>
-          <li><a href="parent-pool-manage-st.html">Parent Pool</a></li>
+          <li><a onclick="window.location.href='{{ url_for( 'parent_pool_overview') }}';">Parent Pool</a></li>
           <li id="selected"><a href="#">Family Pool</a></li>
-          <li><a href="#">Child Pool</a></li>
+          <li onclick="window.location.href='{{ url_for( 'children_pool') }}';">Child Pool</li>
         </ul>
       </nav>
     </div>
@@ -22,28 +22,28 @@
     <div class="sidearea">
       <nav class="sidenav">
         <ul>
-          <li onclick="window.location.href='family-pool-overview.html'">Overview</li>
+          <li onclick="window.location.href='{{ url_for( 'family_pool_overview') }}';">Overview</li>
           <li class="menu-1st">Manage Account
             <ul class="menu-2nd">
-              <li onclick="window.location.href='family-pool-manage-sw.html'">
+              <li onclick="window.location.href='{{ url_for( 'family_pool_manage_sw') }}';">
                 Save/Withdraw
               </li>
               <li>
                 Invest
                 <ul class="menu-3rd-hidden">
                   <li id="selected2">stock</li>
-                  <li onclick="window.location.href='family-pool-manage-fu.html'">fund</li>
-                  <li onclick="window.location.href='family-pool-manage-su.html'">insurance</li>
+                  <li onclick="window.location.href='{{ url_for( 'family_pool_manage_fu') }}';">fund</li>
+                  <li onclick="window.location.href='{{ url_for( 'family_pool_manage_in') }}';">insurance</li>
                 </ul>
               </li>
               <li>Loan</li>
-              <li onclick="window.location.href='family-pool-manage-mp.html'">
+              <li onclick="window.location.href='{{ url_for( 'family_pool_manage_mp') }}';">
                 Manage Pools
               </li>
             </ul>
           </li>
           
-          <li onclick="window.location.href='family-pool-goals.html'">Set Goals</li>
+          <li onclick="window.location.href='{{ url_for( 'family_pool_goal') }}';">Set Goals</li>
         </ul>
         <hr>
         <p>Welcome, Mrs. Rachel</p>

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="mystyle.css">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='mystyle.css')}}">
         <title>Home</title>
     </head>
     <body style="height:100%" onload="changenav(1)">
@@ -13,8 +13,8 @@
       <nav class="topnav">
         <ul>
           <li id="selected"><a href="#">Parent Pool</a></li>
-          <li><a href="family-pool-manage-sw.html">Family Pool</a></li>
-          <li><a href="child-pool-overview.html">Child Pool</a></li>
+          <li ><a onclick="window.location.href='{{ url_for( 'family_pool_overview') }}';">Family Pool</a></li>
+          <li><a onclick="window.location.href='{{ url_for( 'children_pool') }}';">Child Pool</a></li>
         </ul>
       </nav>
     </div>
@@ -22,7 +22,7 @@
     <div class="sidearea">
       <nav class="sidenav">
         <ul>
-          <li onclick="window.location.href='parent-pool-overview.html'">Overview</li>
+          <li onclick="window.location.href='{{ url_for( 'parent_pool_overview') }}';">Overview</li>
           <li class="menu-1st">Manage Account
             <ul class="menu-2nd">
               <li id="selected2">
@@ -31,20 +31,20 @@
               <li>
                 Invest
                 <ul class="menu-3rd-hidden">
-                  <li onclick="window.location.href='parent-pool-manage-st.html'">stock</li>
-                  <li onclick="window.location.href='parent-pool-manage-fu.html'">fund</li>
-                  <li onclick="window.location.href='parent-pool-manage-in.html'">insurance</li>
+                  <li onclick="window.location.href='{{ url_for( 'parent_pool_manage_st') }}';">stock</li>
+                  <li onclick="window.location.href='{{ url_for( 'parent_pool_manage_fu') }}';">fund</li>
+                  <li onclick="window.location.href='{{ url_for( 'parent_pool_manage_in') }}';">insurance</li>
                 </ul>
               </li>
-              <li onclick="window.location.href='parent-pool-manage-lo.html'">
+              <li onclick="window.location.href='{{ url_for( 'parent_pool_manage_lo') }}';">
                 Loan
               </li>
-              <li onclick="window.location.href='parent-pool-manage-mp.html'">
+              <li onclick="window.location.href='{{ url_for( 'parent_pool_manage_mp') }}';">
                 Manage Pools
               </li>
             </ul>
           </li>
-          <li onclick="window.location.href='parent-pool-goals.html'">Set Goals</li>
+          <li onclick="window.location.href='{{ url_for( 'parent_pool_goal') }}';">Set Goals</li>
         </ul>
         <hr>
         <p>Welcome, Mrs. Rachel</p>
@@ -73,7 +73,7 @@
           <div class="inputer-sw">
             <div class="inputarea-sw" id="swarea">
               <p>Please enter the amount (Unit: $)</p>
-              <input type="text">
+              <input type="text" name = "save" value="">
               <button>submit</button>
             </div>
             <div class="transferarea-sw" id="trarea" style="height:0;overflow:hidden;">
@@ -118,9 +118,9 @@
         </div>
         <div class="overview-sw" style="left: 70%;">
           <p>Time Deposit:</p>
-          <p>$  27,590.45</p>
+          <p>$  {{tmp_dict['time_deposit']}}</p>
           <p>Demand Deposit:</p>
-          <p>$  25,799.17</p>
+          <p>$  {{tmp_dict['demand_deposit']}}</p>
           <p>Overall Balance:</p>
           <p>$  53,389.62</p><p style="color: grey; font-size:medium;">($10,310.71 reserved for goals)</p>
         </div>

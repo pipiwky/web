@@ -1,2 +1,4 @@
-father,children,time_deposit,demand_deposit,Investment,Loan,Insurance,Assets,Liabilities,personal_info,familypool
-0,0,20,30,10,20,30,20,10,Children,0
+father,children,flag,time_deposit,demand_deposit,Investment,Loan,Insurance,Assets,Liabilities,personal_info,familypool
+0,1,1,20,30,20,40,20,10,20,father,2
+0,1,0,0,0,0,0,0,0,0,children,2
+0,1,-1,40,20,30,40,50,10,10,family,2

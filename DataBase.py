@@ -6,11 +6,14 @@ class DatabaseUser(object):
     def __init__(self):
         self.Userlist = list()
         self.tmp_dict = {}
+        self.fa_dict = {}
         self.fmypoollst = list()
+        self.currentuser = user()
     def Append_user(self,params):
         A = user()
         A.father = params['father']
         A.Assets = params['Assets']
+        A.flag = params['flag']
         A.Loan = params['Loan']
         A.personal_info = params['personal_info']
         A.Insurance = params['Insurance']
@@ -37,10 +40,11 @@ class DatabaseUser(object):
         return -1
 
     def save_data(self):
-        A = user()
-        A.personal_info = 'Children'
-        print(A.__dict__)
-        d = pd.DataFrame([A.__dict__])
+        lst = []
+        for i in self.Userlist:
+            tmp_dict = i.__dict__
+            lst.append(tmp_dict)
+        d = pd.DataFrame(lst)
         d.to_csv("Userdata",index=0)
 
     def load_data(self):
@@ -49,11 +53,12 @@ class DatabaseUser(object):
         params = []
         for i in val:
             d = {}
-            d.update(dict(zip(['father', 'children', 'time_deposit', 'demand_deposit', 'Investment', 'Loan', 'Insurance', 'Assets','Liabilities','familypool',
-                               'personal_info'], i)))
+            d.update(dict(zip(['father', 'children','flag', 'time_deposit', 'demand_deposit', 'Investment', 'Loan', 'Insurance', 'Assets','Liabilities',
+                               'personal_info','familypool'], i)))
             params.append(d)
         for i in range(len(params)):
-            tmp = params[0]
+            tmp = params[i]
+
             self.Append_user(tmp)
 ## info=["saving",1]
     def update(self,name,info):
@@ -73,10 +78,10 @@ class DatabaseUser(object):
         current.children = tmp['children']
         current.familypool = tmp['familypool']
         current.Investment = tmp['Investment']
+        current.flag = tmp['flag']
         self.Userlist[order] = current
     def retrieve(self,order):
         return self.Userlist[order]
-
 
 
 
