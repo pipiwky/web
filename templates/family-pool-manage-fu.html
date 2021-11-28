@@ -12,12 +12,24 @@
       <p>☰</p>
       <nav class="topnav">
         <ul>
-          <li><a onclick="window.location.href='{{ url_for( 'parent_pool_overview') }}';">Parent Pool</a></li>
+            <li><a href="{{ url_for( 'parent_pool_overview') }}" id = 'a'>Parent Pool</a></li>
           <li id="selected"><a href="#">Family Pool</a></li>
           <li><a onclick="window.location.href='{{ url_for( 'children_pool') }}';">Child Pool</a></li>
         </ul>
       </nav>
     </div>
+    <script>
+        var a=document.getElementById('a')
+        a.onclick = function(){
+            if({{id_dict['flag']}}==1){
+            return true;
+            }
+            else{
+            alert('No Permission');
+            return false;
+            }
+        }
+    </script>
 
     <div class="sidearea">
       <nav class="sidenav">

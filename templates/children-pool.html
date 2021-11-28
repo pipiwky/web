@@ -23,12 +23,12 @@
     <script>
         var a=document.getElementById('a')
         a.onclick = function(){
-            if({{tmp_dict['flag']}}==0){
-            alert('Permission');
-            return false;
+            if({{tmp_dict['flag']}}==1){
+            return true;
             }
             else{
-            return true;
+            alert('No Permission');
+            return false;
             }
         }
     </script>

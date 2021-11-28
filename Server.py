@@ -6,7 +6,7 @@ app = Flask(__name__,template_folder='templates',static_folder='static',static_u
 @app.route('/family_pool_overview',methods=['GET','POST'])
 def family_pool_overview():
     print(Database.tmp_dict)
-    return render_template('family-pool-overview.html',tmp_dict=Database.fa_dict)
+    return render_template('family-pool-overview.html',tmp_dict=Database.fa_dict,id_dict = Database.tmp_dict)
 @app.route('/',methods=['POST','GET'])
 def login():
     if request.method == 'GET':
@@ -48,34 +48,33 @@ def children_pool_mb():
 #family
 @app.route('/family_pool_manage')
 def family_pool_manage():
-    if(Database.currentuser.flag==1):
-        return render_template('family-pool-manage.html',tmp_dict=Database.fa_dict)
+    return render_template('family-pool-manage.html',tmp_dict=Database.fa_dict,id_dict = Database.tmp_dict)
 @app.route('/family_pool_manage_st')
 def family_pool_manage_st():
-    return render_template('family-pool-manage-st.html',tmp_dict=Database.fa_dict)
+    return render_template('family-pool-manage-st.html',tmp_dict=Database.fa_dict,id_dict = Database.tmp_dict)
 
 @app.route('/family_pool_manage_fu')
 def family_pool_manage_fu():
-    return render_template('family-pool-manage-fu.html',tmp_dict=Database.fa_dict)
+    return render_template('family-pool-manage-fu.html',tmp_dict=Database.fa_dict,id_dict = Database.tmp_dict)
 @app.route('/family_pool_manage_lo')
 def family_pool_manage_lo():
-    return render_template('family-pool-manage-lo.html',tmp_dict=Database.fa_dict)
+    return render_template('family-pool-manage-lo.html',tmp_dict=Database.fa_dict,id_dict = Database.tmp_dict)
 @app.route('/family_pool_manage_in')
 def family_pool_manage_in():
-    return render_template('family-pool-manage-in.html',tmp_dict = Database.fa_dict)
+    return render_template('family-pool-manage-in.html',tmp_dict = Database.fa_dict,id_dict = Database.tmp_dict)
 
 @app.route('/family_pool_manage_sw')
 def family_pool_manage_sw():
-    return render_template('family-pool-manage-sw.html',tmp_dict = Database.fa_dict)
+    return render_template('family-pool-manage-sw.html',tmp_dict = Database.fa_dict,id_dict = Database.tmp_dict)
 @app.route('/family_pool_manage_su')
 def family_pool_manage_su():
-    return render_template('family-pool-manage-su.html',tmp_dict = Database.fa_dict)
+    return render_template('family-pool-manage-su.html',tmp_dict = Database.fa_dict,id_dict = Database.tmp_dict)
 @app.route('/family_pool_manage_mp')
 def family_pool_manage_mp():
-    return render_template('family-pool-manage-mp.html',tmp_dict = Database.fa_dict)
+    return render_template('family-pool-manage-mp.html',tmp_dict = Database.fa_dict,id_dict = Database.tmp_dict)
 @app.route('/family_pool_goal')
 def family_pool_goal():
-    return render_template('family-pool-goals.html',tmp_dict = Database.fa_dict)
+    return render_template('family-pool-goals.html',tmp_dict = Database.fa_dict,id_dict = Database.tmp_dict)
 #parent
 
 @app.route('/parent_pool_manage')
