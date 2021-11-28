@@ -15,8 +15,8 @@
       <nav class="topnav">
         <ul>
             <li><a href="{{ url_for( 'parent_pool_overview') }}" id = 'a'>Parent Pool</a></li>
-          <li onclick="window.location.href='{{ url_for( 'family_pool_overview') }}';">Family Pool</a></li>
-          <li id="selected"><a href="children-pool.html">Children Pool</a></li>
+            <li><a href="{{ url_for( 'family_pool_overview') }}">Family Pool</a></li>
+          <li id="selected"><a href="">Child Pool</a></li>
         </ul>
       </nav>
     </div>
@@ -41,33 +41,42 @@
         </ul>
         <hr>
         <p>Welcome, Bob</p>
-        <img src="parent.png" alt="parent">
+        <img src="/static/child.png" alt="parent">
       </nav>
     </div>
     <div class="container">
-        <div class ="viewer">
-            <div class = "card-overview">
-            <h3>Overview</h3><hr>
-          <ul>
+      <div class ="viewer">
+          <div class = "card-overview">
+          <p>Overview</p><hr>
+        <ul>
+          <li>
+            Current Balance
+          </li>
+          <li>
+            100
+          </li>
+          <li>
+            Monthly Expense
+          </li>
+          <li>
+            220
+          </li>
             <li>
-              Balance now : 100
-            </li>
-            <li>
-              Expense last mouth: 220
-            </li>
-              <li>
-              Income per mouth: 300
-            </li>
-          </ul>
+            Income per month
+          </li>
+          <li>
+            300
+          </li>
+        </ul>
 
-            </div>
-            <span class="slider"></span>
+          </div>
+          <span class="slider"></span>
 
-            <div class="chart-container" style="height: 370px; width: 50%;">
-                <div id="chart1"></div>
-            </div>
-        </div>
-    </div>
+          <div class="chart-container" style="height: 370px; width: 50%;">
+              <div id="chart1"></div>
+          </div>
+      </div>
+  </div>
 
     <script>
       var btn = document.getElementById("selected")
@@ -75,6 +84,7 @@
       btn.style.color = "azure";
       btn.style.boxShadow ="rgba(44, 39, 39, 0.653) 1px 10px 50px 10px";
       btn.style.zIndex = "1";
+      document.getElementById("selected2").style.color = "silver";
     </script>
             <script type="text/javascript">
 var dom = document.getElementById("chart1");

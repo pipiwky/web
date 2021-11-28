@@ -57,14 +57,14 @@
           <li onclick="window.location.href='{{ url_for( 'family_pool_goal') }}';">Set Goals</li>
         </ul>
         <hr>
-        <p>Welcome, Mrs. Rachel</p>
-        <img src="user.png" alt="user">
+        <p>Welcome, Bob</p>
+        <img src="/static/user.png" alt="user">
       </nav>
     </div>
     <div class="container">
-      <div class="viewer">
+      <div class="viewer"><div class="float-menu" id="mask" style="height: 0;"></div>
         <div class="imgshower-sw">
-          <img src="cash-flow.png" alt="cash">
+          <img src="/static/cash-flow.png" alt="cash">
         </div>
         <div class="table-sw">
           <nav>
@@ -84,7 +84,7 @@
             <div class="inputarea-sw" id="swarea">
               <p>Please enter the amount (Unit: $)</p>
               <input type="text" name = "save" value="">
-              <button>submit</button>
+              <button onclick="showmenu()">submit</button>
             </div>
             <div class="transferarea-sw" id="trarea" style="height:0;overflow:hidden;">
               <div class="transtable1">
@@ -153,8 +153,7 @@
           background: linear-gradient(160deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) right;
           background-size: 50.003% 100%;
           background-repeat: no-repeat;
-          z-index: 3;
-          box-shadow:  30px 10px 20px -12px rgba(0, 0, 0, 0.283);
+          box-shadow:  40px 10px 20px -12px rgba(0, 0, 0, 0.583);
           `
           tb2.style = `
           background: linear-gradient(160deg, transparent 10px, rgba(220, 216, 216, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(214, 211, 211, 0.87) 0) right;
@@ -181,7 +180,6 @@
             background: linear-gradient(160deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) right;
             background-size: 50.003% 100%;
             background-repeat: no-repeat;
-            z-index: 3;
             box-shadow:  0px 22px 20px 0px rgba(0, 0, 0, 0.22);
             `
             tb3.style = `
@@ -203,7 +201,6 @@
             background: linear-gradient(160deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) right;
             background-size: 50.003% 100%;
             background-repeat: no-repeat;
-            z-index: 3;
             box-shadow:  -30px 10px 20px -12px rgba(0, 0, 0, 0.283);
             `
             tb2.style = `
@@ -461,7 +458,34 @@
           `
         }
       }
-      
+      function hidemenu(){
+        var btn = document.getElementById("mask")
+        while (btn.hasChildNodes()) {
+          btn.removeChild(btn.lastChild);
+        }
+        btn.style.height = "0";
+      }
+      function showmenu() {
+        document.getElementById("mask").style.height="400px";
+        document.getElementById("mask").style.border="2px solid rgba(255,255,255,0.1);";
+        var mask = document.querySelector(".float-menu");
+        var insertbtn = `
+          <p>Choose A Method</p>
+          <button class="floatbtn">
+            Other Bank Accounts
+          </button>
+          <button class="floatbtn">
+            Wechat
+          </button>
+          <button class="floatbtn">
+            Alipay
+          </button>
+          <button class="floatbtn" onclick="hidemenu()">
+            Return
+          </button>
+        `
+        mask.innerHTML = (insertbtn);
+      }
     </script>
     <footer style="display: none;"><div>Pool Icons made by <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
       <div>User profile Icons made by <a href="https://www.flaticon.com/authors/bombasticon-studio" title="Bombasticon Studio">Bombasticon Studio</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>

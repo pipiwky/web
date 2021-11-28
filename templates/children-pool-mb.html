@@ -15,8 +15,8 @@
       <nav class="topnav">
         <ul>
             <li><a href="{{ url_for( 'parent_pool_overview') }}" id = 'a'>Parent Pool</a></li>
-          <li onclick="window.location.href='{{ url_for( 'family_pool_overview') }}';">Family Pool</a></li>
-          <li id="selected"><a href="children-pool.html">Children Pool</a></li>
+            <li><a href="{{ url_for( 'family_pool_overview') }}">Family Pool</a></li>
+          <li id="selected"><a href="">Child Pool</a></li>
         </ul>
       </nav>
     </div>
@@ -41,16 +41,16 @@
         </ul>
         <hr>
         <p>Welcome, Bob</p>
-        <img src="parent.png" alt="parent">
+        <img src="/static/child.png" alt="parent">
       </nav>
     </div>
     <div class="container">
-        <div class ="viewer">
-      <div class="insurecard">
-        <p class="title">
+      <div class ="viewer1-mb">
+        <div class="insurecard">
+          <p class="title">
           Saving
-        </p>
-        <div>
+          </p>
+          <div>
           <p class="subtitle">
             Scholarships
           </p><hr>
@@ -71,42 +71,50 @@
           </p><hr>
           <p>&ThinSpace;</p><hr>
           <p>&ThinSpace;</p><hr>
-        </div>
+          </div>
         </div>
         <div>
 
         </div>
-        <div class = "card1-overview">
-          <ul>
-            <li>
-              Mouthly Rate : 0.5%
-            </li>
-            <li>
-              Today Income:$ 10
-            </li>
-          </ul>
-
-            </div>
-                <div class="table-sw">
-          <nav>
-            <ul class="tablenav-sw">
-              <li id="tb1" onclick="changenav(1);changearea(1)">
-                Save
-              </li>
-              <li id="tb2" onclick="changenav(2);changearea(1)">
-                Withdraw
-              </li>
-            </ul>
-          </nav>
-            <div class="inputer-sw">
-            <div class="inputarea-sw" id="swarea">
-              <p>Please enter the amount (Unit: $)</p>
-              <input type="text" name = "save" value="">
-              <button>submit</button>
-            </div>
-            </div>
-
     </div>
+    <div class="viewer2-mb">
+      <div class = "table2-mb">
+        <table>
+          <tr>
+            <th>Monthly Rate</th>
+            <th>Income Today</th>
+          </tr>
+          <tr>
+            <td>0.5%</td>
+            <td>$10</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="viewer3-mb">
+      <nav>
+        <ul class="tablenav-in">
+          <li id="tb1-in"  style="left: 10%;"onclick="changenavin(1)">
+            Save<span id="tb1-in-s"></span>
+          </li>
+          <li id="tb2-in" style="left: 55%;" onclick="changenavin(2)">
+            Withdraw<span id="tb2-in-s"></span>
+          </li>
+        </ul>
+      </nav>
+      <div class="table-sw">
+          <div class="inputer-sw">
+            <div class="inputarea-sw" id="swarea">
+            <p>Remarks on Cash Flow</p>
+            <input type="text" name = "save" value="">
+            <p>Please enter the amount (Unit: $)</p>
+            <input type="text">
+            <button>submit</button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
     <script>
       var btn = document.getElementById("selected")
       btn.style.backgroundColor = "lightslategray";
@@ -121,321 +129,64 @@
       btn.style.boxShadow ="rgba(44, 39, 39, 0.653) 1px 10px 50px 10px";
       btn.style.zIndex = "1";
       document.getElementById("selected2").style.color = "silver";
-      function changenav(selecter){
-        tb1 = document.getElementById("tb1");
-        tb2 = document.getElementById("tb2");
-        tb3 = document.getElementById("tb3");
-        if(selecter == 1){
-          tb1.style = `
-          background: linear-gradient(160deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) right;
-          background-size: 50.003% 100%;
-          background-repeat: no-repeat;
-          z-index: 3;
-          box-shadow:  30px 10px 20px -12px rgba(0, 0, 0, 0.283);
+      function changenavin(selecter){
+        var tb1in1 = document.getElementById("tb1-in");
+        var tbspan1 = document.getElementById("tb1-in-s");
+        var tb1in2 = document.getElementById("tb2-in");
+        var tbspan2 = document.getElementById("tb2-in-s");
+        var table1 = document.getElementById("table-in-1");
+        var table2 = document.getElementById("table-in-2");
+        if(selecter == 1)
+        {
+          tb1in2.style = `
+          background-color: rgb(175, 171, 171);
+          color: rgba(0, 0, 0, 0.455);
+          box-shadow: 10px 10px 30px 0px rgba(155, 155, 155, 0.394);
+          top: -6%;
+          left: 55%;
+          transition: 0.3s all ease;
           `
-          tb2.style = `
-          background: linear-gradient(160deg, transparent 10px, rgba(220, 216, 216, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(214, 211, 211, 0.87) 0) right;
-          background-size: 50.007% 100%;
-          background-repeat: no-repeat;
-          box-shadow: none;
+          tb1in1.style = `
+          background-color: rgb(140, 245, 140);
+          color: white;
+          box-shadow: 10px 10px 10px 0px rgba(155, 155, 155, 0.293);
+          top: -3.7%;
+          left: 10%;
+          transition: 0.3s all ease;
           `
-          tb3.style = `
-          background: linear-gradient(160deg, transparent 10px, rgba(220, 216, 216, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(214, 211, 211, 0.87) 0) right;
-          background-size: 50.007% 100%;
-          background-repeat: no-repeat;
-          box-shadow: none;
+          tbspan2.style.height = '40%';
+          tbspan1.style = `
+          height: 25%;
+          transition: all 0.3s ease;
           `
-        }
-        else if(selecter == 2)
-          {
-            tb1.style = `
-            background: linear-gradient(160deg, transparent 10px, rgba(220, 216, 216, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(214, 211, 211, 0.87) 0) right;
-            background-size: 50.007% 100%;
-            background-repeat: no-repeat;
-            box-shadow: none;
-            `
-            tb2.style = `
-            background: linear-gradient(160deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) right;
-            background-size: 50.003% 100%;
-            background-repeat: no-repeat;
-            z-index: 3;
-            box-shadow:  0px 22px 20px 0px rgba(0, 0, 0, 0.22);
-            `
-            tb3.style = `
-            background: linear-gradient(160deg, transparent 10px, rgba(220, 216, 216, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(214, 211, 211, 0.87) 0) right;
-            background-size: 50.007% 100%;
-            background-repeat: no-repeat;
-            box-shadow: none;
-            `
-          }
-          else
-          {
-            tb1.style = `
-            background: linear-gradient(160deg, transparent 10px, rgba(220, 216, 216, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(214, 211, 211, 0.87) 0) right;
-            background-size: 50.007% 100%;
-            background-repeat: no-repeat;
-            box-shadow: none;
-            `
-            tb3.style = `
-            background: linear-gradient(160deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(255, 255, 255, 0.87) 0) right;
-            background-size: 50.003% 100%;
-            background-repeat: no-repeat;
-            z-index: 3;
-            box-shadow:  -30px 10px 20px -12px rgba(0, 0, 0, 0.283);
-            `
-            tb2.style = `
-            background: linear-gradient(160deg, transparent 10px, rgba(220, 216, 216, 0.87) 0) left, linear-gradient(200deg, transparent 10px, rgba(214, 211, 211, 0.87) 0) right;
-            background-size: 50.007% 100%;
-            background-repeat: no-repeat;
-            box-shadow: none;
-            `
-          }
-      }
-      function changearea(selecter){
-        trarea = document.getElementById("trarea");
-        swarea = document.getElementById("swarea");
-        if (selecter==1){
-          trarea.style = `height:0;`
+          table2.style.height = '0';
+          setTimeout(function(){table1.style.height = '100%'},600);
         }
         else
         {
-          trarea.style = `height: 100%;`
-        }
-      }
-      function changebtn(selecter){
-        if(selecter==1)
-        {
-          document.getElementById("tra1").style = `
-          transform: scale(1.12);
-          transition: all 0.14s;
-          color: rgb(52, 52, 52);
-          background-color: #f1f1f1;
+          tb1in1.style = `
+          background-color: rgb(175, 171, 171);
+          color: rgba(0, 0, 0, 0.455);
+          box-shadow: 10px 10px 30px 0px rgba(155, 155, 155, 0.394);
+          top: -6%;
+          left: 10%;
+          transition: 0.3s all ease;
           `
-          document.getElementById("tra2").style = `
-          border:2px rgba(140, 140, 140, 0.864);
-          border-style: solid;
-          border-radius: 3%;
-          margin-bottom: 0.5%;
-          margin-top: 2%;
-          padding: 0px;
+          tb1in2.style = `
+          background-color: rgb(140, 245, 140);
+          color: white;
+          box-shadow: 10px 10px 10px 0px rgba(155, 155, 155, 0.293);
+          top: -3.7%;
+          left: 55%;
+          transition: 0.3s all ease;
+          `
+          tbspan1.style.height = '40%';
+          tbspan2.style = `
           height: 25%;
-          color: #ffffff8e;
-          display: block;
-          line-height: 2;
-          cursor: pointer;
-          background-color: rgba(152, 152, 152, 0.646);
-          transition: all 0.14s;
+          transition: all 0.3s ease;
           `
-          document.getElementById("tra3").style = `
-          border:2px rgba(140, 140, 140, 0.864);
-          border-style: solid;
-          border-radius: 3%;
-          margin-bottom: 0.5%;
-          margin-top: 2%;
-          padding: 0px;
-          height: 25%;
-          color: #ffffff8e;
-          display: block;
-          line-height: 2;
-          cursor: pointer;
-          background-color: rgba(152, 152, 152, 0.646);
-          transition: all 0.14s;
-          `
-        }
-        else if (selecter==2)
-        {
-          document.getElementById("tra2").style = `
-          transform: scale(1.12);
-          transition: all 0.14s;
-          color: rgb(52, 52, 52);
-          background-color: #f1f1f1;
-          `
-          document.getElementById("tra1").style = `
-          border:2px rgba(140, 140, 140, 0.864);
-          border-style: solid;
-          border-radius: 3%;
-          margin-bottom: 0.5%;
-          margin-top: 2%;
-          padding: 0px;
-          height: 25%;
-          color: #ffffff8e;
-          display: block;
-          line-height: 2;
-          cursor: pointer;
-          background-color: rgba(152, 152, 152, 0.646);
-          transition: all 0.14s;
-          `
-          document.getElementById("tra3").style = `
-          border:2px rgba(140, 140, 140, 0.864);
-          border-style: solid;
-          border-radius: 3%;
-          margin-bottom: 0.5%;
-          margin-top: 2%;
-          padding: 0px;
-          height: 25%;
-          color: #ffffff8e;
-          display: block;
-          line-height: 2;
-          cursor: pointer;
-          background-color: rgba(152, 152, 152, 0.646);
-          transition: all 0.14s;
-          `
-        }
-        else if (selecter==3)
-        {
-          document.getElementById("tra3").style = `
-          transform: scale(1.12);
-          transition: all 0.14s;
-          color: rgb(52, 52, 52);
-          background-color: #f1f1f1;
-          `
-          document.getElementById("tra1").style = `
-          border:2px rgba(140, 140, 140, 0.864);
-          border-style: solid;
-          border-radius: 3%;
-          margin-bottom: 0.5%;
-          margin-top: 2%;
-          padding: 0px;
-          height: 25%;
-          color: #ffffff8e;
-          display: block;
-          line-height: 2;
-          cursor: pointer;
-          background-color: rgba(152, 152, 152, 0.646);
-          transition: all 0.14s;
-          `
-          document.getElementById("tra2").style = `
-          border:2px rgba(140, 140, 140, 0.864);
-          border-style: solid;
-          border-radius: 3%;
-          margin-bottom: 0.5%;
-          margin-top: 2%;
-          padding: 0px;
-          height: 25%;
-          color: #ffffff8e;
-          display: block;
-          line-height: 2;
-          cursor: pointer;
-          background-color: rgba(152, 152, 152, 0.646);
-          transition: all 0.14s;
-          `
-        }
-        else if (selecter==4)
-        {
-          document.getElementById("trb1").style = `
-          transform: scale(1.12);
-          transition: all 0.14s;
-          color: rgb(52, 52, 52);
-          background-color: #f1f1f1;
-          `
-          document.getElementById("trb2").style = `
-          border:2px rgba(140, 140, 140, 0.864);
-          border-style: solid;
-          border-radius: 3%;
-          margin-bottom: 0.5%;
-          margin-top: 2%;
-          padding: 0px;
-          height: 25%;
-          color: #ffffff8e;
-          display: block;
-          line-height: 2;
-          cursor: pointer;
-          background-color: rgba(152, 152, 152, 0.646);
-          transition: all 0.14s;
-          `
-          document.getElementById("trb3").style = `
-          border:2px rgba(140, 140, 140, 0.864);
-          border-style: solid;
-          border-radius: 3%;
-          margin-bottom: 0.5%;
-          margin-top: 2%;
-          padding: 0px;
-          height: 25%;
-          color: #ffffff8e;
-          display: block;
-          line-height: 2;
-          cursor: pointer;
-          background-color: rgba(152, 152, 152, 0.646);
-          transition: all 0.14s;
-          `
-        }
-        else if (selecter==5)
-        {
-          document.getElementById("trb2").style = `
-          transform: scale(1.12);
-          transition: all 0.14s;
-          color: rgb(52, 52, 52);
-          background-color: #f1f1f1;
-          `
-          document.getElementById("trb1").style = `
-          border:2px rgba(140, 140, 140, 0.864);
-          border-style: solid;
-          border-radius: 3%;
-          margin-bottom: 0.5%;
-          margin-top: 2%;
-          padding: 0px;
-          height: 25%;
-          color: #ffffff8e;
-          display: block;
-          line-height: 2;
-          cursor: pointer;
-          background-color: rgba(152, 152, 152, 0.646);
-          transition: all 0.14s;
-          `
-          document.getElementById("trb3").style = `
-          border:2px rgba(140, 140, 140, 0.864);
-          border-style: solid;
-          border-radius: 3%;
-          margin-bottom: 0.5%;
-          margin-top: 2%;
-          padding: 0px;
-          height: 25%;
-          color: #ffffff8e;
-          display: block;
-          line-height: 2;
-          cursor: pointer;
-          background-color: rgba(152, 152, 152, 0.646);
-          transition: all 0.14s;
-          `
-        }
-        else if (selecter==6)
-        {
-          document.getElementById("trb3").style = `
-          transform: scale(1.12);
-          transition: all 0.14s;
-          color: rgb(52, 52, 52);
-          background-color: #f1f1f1;
-          `
-          document.getElementById("trb2").style = `
-          border:2px rgba(140, 140, 140, 0.864);
-          border-style: solid;
-          border-radius: 3%;
-          margin-bottom: 0.5%;
-          margin-top: 2%;
-          padding: 0px;
-          height: 25%;
-          color: #ffffff8e;
-          display: block;
-          line-height: 2;
-          cursor: pointer;
-          background-color: rgba(152, 152, 152, 0.646);
-          transition: all 0.14s;
-          `
-          document.getElementById("trb1").style = `
-          border:2px rgba(140, 140, 140, 0.864);
-          border-style: solid;
-          border-radius: 3%;
-          margin-bottom: 0.5%;
-          margin-top: 2%;
-          padding: 0px;
-          height: 25%;
-          color: #ffffff8e;
-          display: block;
-          line-height: 2;
-          cursor: pointer;
-          background-color: rgba(152, 152, 152, 0.646);
-          transition: all 0.14s;
-          `
+          table1.style.height = '0';
+          setTimeout(function(){table2.style.height = '100%'},600);
         }
       }
 
