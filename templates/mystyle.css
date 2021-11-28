@@ -844,6 +844,13 @@ body {
     transform-style: preserve-3d;
     
 }
+.goal span {
+    position: absolute;
+    left: 79%;
+    top: -4%;
+    color: rgb(94, 94, 94);
+    font-size: x-large;
+}
 .title-goal {
     text-transform: uppercase;
     font-size: large;
