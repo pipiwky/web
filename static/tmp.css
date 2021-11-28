@@ -618,12 +618,12 @@ body {
 .viewer1-st .table1-st-content {
     color: rgb(73, 72, 72);
     line-height: 3;
-    box-shadow: rgba(175, 70, 9, 0.435) 1px -6px 26px 0px;
+    box-shadow: rgba(175, 70, 9, 0.258) 1px -6px 16px 0px;
     transition: 0.3s all;
 }
 .table1-st-content:hover {
     transform: scale(1.008);
-    box-shadow: rgba(175, 70, 9, 0.435) 1px -6px 50px 5px;
+    box-shadow: rgba(175, 70, 9, 0.279) 1px -6px 50px 5px;
     transition: 0.25s all;
 }
 .viewer1-st .viewer1-st-overview {
