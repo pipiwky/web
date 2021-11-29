@@ -245,7 +245,7 @@ body {
             40vmax 60vmax;
         }
       }
-.viewer {
+.viewer { /*box-shadow inspired by https://getcssscan.com/css-box-shadow-examples?ref=producthunt*/
     position: relative;
     width: 95%;
     height: 90%;
